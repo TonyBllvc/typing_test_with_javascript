@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Typing Tests</title>
+
+    <!-- For screen size control -->
+    <link rel="stylesheet" href="src/bodyControl.css">
+
+    <!-- Interface for the first Test board -->
+    <link rel="stylesheet" href="src/testOneTyping.css">
+
+    <!-- Interface for the first Test board -->
+    <link rel="stylesheet" href="src/testTwoTyping.css">
+
+    <!-- The keyboard -->
+    <link rel="stylesheet" href="src/keyboard.css">
+
+    <!-- The preloader Interface -->
+    <link rel="stylesheet" href="src/preloader.css">
+
+    <!-- Pre-menu Interface ( An interface after the preloader ) -->
+    <link rel="stylesheet" href="src/premenu.css">
+
+    <!-- Message popup interface -->
+    <link rel="stylesheet" href="src/messagePopup.css">
+
+    <!-- The keyboard functionalities -->
+    <script type="text/javascript" src="src/typing.js">
+
+
+    </script>
+    <script type="text/javascript" src="src/preloader.js"></script>
+    <script type="text/javascript" src="src/typing.Two.js"></script>
+
+    <script type="text/javascript" src="src/premenu.js">
+
+    </script>
+    <script type="text/javascript" src="src/theme.js"></script>
+
+</head>
+
+<body id="body" onload="system()">
+
+    <!-- For mobile view -->
+    <div class="mobileView">
+        <h1 class="textMobile"> Mobile View still in development, switch to laptop view </h1>
+        <h1 class="textTablet"> Tablet View still in development, switch to laptop view </h1>
+    </div>
+
+    <!-- For Desktop view -->
+    <div class="desktopView">
+
+        <!-- Preloader system -->
+        <div class="loadSync" id="loadSync" style="display: none;">
+            <div class="loadSyncBox">
+                <div class="loadTextBox">
+                    <div class="loadText">
+                        Orchard
+                    </div>
+                </div>
+                <div class="animateTextBox">
+                    Typing Test
+                </div>
+            </div>
+        </div>
+
+        <!-- Pre-menu system -->
+        <div id="instructMe" class="instructMe" style="display: none;">
+            <div class="InstructContainer">
+                <div id="InstructMeOne" class="writtenInstructions" style="display: non;">
+                    <p> Please follow instructions at all times</p>
+                </div>
+                <div id="InstructMeTwo" class="writtenInstructions" style="display: none;">
+                    <p> Failure to do so, can result to errors in count.</p>
+                </div>
+                <form id="InstructMeThree" name="myForm" class="writtenInstructions" style="display: none;">
+                    <input id="username" class="typeDetails " name="username" type="text" placeholder="Your Username"
+                        required autofocus maxlength="20" />
+                    <!-- <p id="right"> </p> -->
+                </form>
+            </div>
+            <div id="beginClick" class="continueButton" style="display: none">
+                <input id="doMe" type="button" onclick="beginClick()" class="NextBtn" value="Begin!">
+            </div>
+            <div id="nextClick" class="continueButton" style="display: non;">
+                <input type="button" onclick="nextClick()" class="NextBtn" value="Next">
+            </div>
+            <div id="contClick" class="continueButton" style="display: none;">
+                <input type="button" onclick="contClick()" class="continueBtn" value="Next">
+            </div>
+        </div>
+
+        <!-- Welcome message pop-up -->
+        <div id="popupContain" class="popupContain" style="display: none;">
+            <div class="InstructContainer">
+                <div class="writtenInstructions">
+                    Welcome
+                </div>
+                <div id="authorName" class="authorName">
+                    <!-- There will be a display of name here after page loads -->
+                </div>
+            </div>
+        </div>
+
+        <!-- The container holding the application interface-->
+        <div id="container" class="container" style="display: non;">
+
+            <!-- Holds the Title of the page -->
+            <div id="TITLE" class="title">
+                <input type="text" name="indicate" id="indicator"
+                    style="width: 15px; background-color: whitesmoke; color: darkslategray; border: none;" disabled />
+                <span id="TEXTONE" style="color: white; font-size: 45px;"> Typing Tests </span>
+                <input type="button" onclick="mode()" name="indicate" id="mode" value="&#127769;"
+                    style="width: 25px; display: flex; justify-content: center; align-items: center; padding: 10px 15px; margin-left: 10px; background-color: whitesmoke; border: none;" />
+                <input type="text" name="indicate" id="modeNo" value="1"
+                    style="width: 7px; display: none; justify-content: center; align-items: center; padding: 7px 3px; margin-left: 10px; background-color: whitesmoke; border: none;"
+                    disabled />
+            </div>
+
+            <!-- First Test -->
+
+            <!-- The screen section -->
+            <div class="page" id="controlOne">
+
+                <!--  The screen section that displays the typing screen -->
+                <div class="testOneScreenBox">
+                    <form name="screen" id="SCREEN" class="screen" onsubmit="return false">
+                        <input type="text" id="form-fill" name="form" placeholder="Input form to be typed" disabled>
+                        <input type="text" id="form-check" name="form" placeholder="Display to check" disabled>
+                        <input type="text" id="text-fill" name="text" onkeyup="keyCl(event)" onfocus="keyCl(event)"
+                            onchange="keyCl(event)" onclick="keyCl(event)" onkeyup="backspace(event)" required
+                            autocomplete="off" spellcheck="false">
+                    </form>
+                    <div class="testButtonTwo">
+                        <div id="BODYONE" class="testButtonTwoBox">
+                            <input type="button" value="Test One" id="testOneC" onclick="loadingSyncOne()"
+                                class="btnTest testOneC">
+                            <input type="button" value="Reload" id="cancel" onclick="cancelButtonOne()"
+                                class="cancelBtnTest">
+                            <input type="button" value="Test Two" id="testTwoC" onclick="loadingSyncTwo()"
+                                class="btnTest testTwoC">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The section that contains the controls -->
+                <div class="buttons-control">
+                    <div id="BODYTWO" class="center">
+                        <!-- The left hand of the control section -->
+                        <div class="box-side">
+                            <div class="instructBoxOne">
+                                <p id="INSTRUCTIONONE" class="instructTitle"> Instructions </p>
+                                <p id="instructionBoxOne"> For test one: Your test has disabled. To enable test, please
+                                    select from any of the levels below ie. Easy, Intermediate, Hard. Then ... </p>
+                            </div>
+                        </div>
+                        <div class="box-center">
+                            <div id="INSTRUCTIONTWO" class="instruction"> Control Board </div>
+                            <div class="inner-2">
+                                <input class="play" id="play" type="button" value="Play" onclick="play()" />
+                                <!-- <div class=" play-cut"> &#8596; </div> -->
+                                <!-- <input class="play play-cut" type="button" value="&#9208;" onclick="pause()"> -->
+                                <input class="stop" id="stop" type="button" value="Stop" onclick="haltGame()" />
+                            </div>
+                            <div class="level">
+                                <input id="easy" class="level-set" type="button" value="Easy" onclick="easy()" />
+                                <input id="medium" class="level-set" type="button" value="Medium" onclick="medium()" />
+                                <input id="hard" class="level-set" type="button" value="Hard" onclick="hard()" />
+                            </div>
+                        </div>
+                        <div class="box-side">
+                            <p id="INSTRUCTIONTHREE" class="boardTitle"> Flow Board </p>
+                            <div class="buttonsDivider">
+                                <!-- <div class="insideWord">
+                                    <hr />
+                                    <input type="text" class="interior wpm" name="wpm" id="wpm" style="text-align: center;" placeholder="Word per min" disabled>
+                                </div> -->
+                                <!-- <div class="timerDivider"> -->
+                                <div class="inner rundown">
+                                    <span>
+                                        <input type="text" name="" placeholder="00" class="interior window" id="minute"
+                                            disabled> :
+                                        <input type="text" name="" placeholder="00" class="interior window" id="second"
+                                            disabled>
+                                    </span>
+                                </div>
+                                <div class="inner time">
+                                    <input type="text" class="interior wt" name="wordTarget" id="target"
+                                        style="text-align: center;" placeholder="Word Target" disabled>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+                            <div id="span">
+                                <input type="text" placeholder="time" style=" border-radius: 5rem;" id="noW-two"
+                                    class="noW" disabled />
+                                <input type="text" placeholder="word count" style=" border-radius: 5rem;"
+                                    id="grandLevel" class="noW" disabled />
+                                <input type="text" placeholder="w/t" style=" border-radius: 5rem;" id="noW-one"
+                                    class="noW" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Second test -->
+            <div class="secondInterface" id="controlTwo">
+
+                <div class="secIntContainer">
+                    <div id="SCREENTWO" class="testTwoScreenBox">
+                        <form name="screen" class="SecIntScreen" onsubmit="return false" action="">
+                            <input type="text" name="loadText" id="loadTextValue" placeholder="Random words" disabled />
+                            <input type="text" name="loadText" id="checkForm" placeholder="Word Checker" disabled />
+                            <input class="secIntScreenContainer" name="textValue" id="text" onclick="typingOne(event)"
+                                onkeyup="typingOne(event)" autocomplete="off" autocapitalize="off" spellcheck="false"
+                                disabled />
+                            <!-- <input type="text" name="" id=""> -->
+                            <!-- </div> -->
+                        </form>
+                        <div class="testButtonTwo">
+                            <div id="BODYTHREE" class="testButtonTwoBox">
+                                <input type="button" value="Test One" id="firstTest" onclick="loadingSyncOne()"
+                                    class="btnTest firstTest" />
+                                <input type="button" value="Reload" id="cancel" class="cancelBtnTest"
+                                    onclick="cancelButtonTwo()" />
+                                <input type="button" value="Test Two" id="secondTest" onclick="loadingSyncTwo()"
+                                    class="btnTest secondTest" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="SecIntButtons">
+                        <div id="BODYFOUR" class="SecIntBtnContainer">
+                            <div class="center-flex speedDisplay-width">
+                                <div id="BODYFIVE" class="inner-flex speedDispContainer" id="speedDisplay">
+                                    <div type="button" class="instructBoxTwo">
+                                        <p class="instructTitle"> Instructions </p>
+                                        <p id="instructionBoxTwo"> For Test two. Your test has been disabled. To enable
+                                            test, set your test values. First input a time duration (Mins & Secs) with
+                                            the
+                                            buttons.. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="middle-center-flex countdownTimer-width">
+                                <div id="BODYSIX" class="countDownTimerContainer">
+                                    <div class="middle-inner-flex applyBtn">
+                                        <div class="btnContainer">
+                                            <input type="button" id="apply" class="press" onclick="apply()"
+                                                value="Apply">
+                                        </div>
+                                    </div>
+                                    <div id="circleBG" class="middle-inner-flex-circle">
+                                        <span>
+                                            <input type="text" class="Input-extra" name="minIntContainer" id="mins"
+                                                placeholder="00" oninput="minut()" onchange="minut()" onfocus="minut()"
+                                                disabled>
+                                            <strong> : </strong>
+                                            <input type="text" class="Input-extra" name="secIntContainer" id="secs"
+                                                placeholder="00" oninput="minut()" onchange="minut()" onfocus="minut()"
+                                                disabled>
+                                        </span>
+                                        <span>
+                                            <input type="button" id="start" value="Start" onclick="start()"
+                                                class="press-start">
+                                        </span>
+                                    </div>
+                                    <div class="middle-inner-flex stopBtn">
+                                        <div class="btnContainer">
+                                            <input type="button" id="stopping" class="press" onclick="endStop()"
+                                                value="Stop">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center-flex timeRange-width">
+                                <div id="BODYSEVEN" class="inner-flex timeRanContaine-respo" id="timeRange">
+                                    <span class="span-one">
+                                        Set your test value, then begin
+                                    </span>
+                                    <span class="span-two">
+                                        <div style="display: flex; flex-direction:column">
+                                            <span class="span-two-one" style="color: dimgray"> Mins </span>
+                                            <input type="text" class="Input" name="min" id="min" placeholder="00"
+                                                disabled>
+                                            <div class="countin">
+                                                <input type="button"
+                                                    style=" font-size: 15px; background-color: cadetblue;"
+                                                    onclick="plusM()" value="+">
+                                                <input type="button"
+                                                    style=" font-size: 15px; background-color: cadetblue;"
+                                                    onclick="minusM()" value="-">
+                                            </div>
+                                        </div>
+                                        <b> : </b>
+                                        <div style="display: flex; flex-direction:column">
+                                            <span class="span-two-one" style="color: dimgray;"> Secs </span>
+                                            <input type="text" class="Input" name="sec" id="sec" placeholder="00"
+                                                disabled>
+                                            <div class="countin">
+                                                <!-- <input type="button" style=" font-size: 15px; background-color: cadetblue;" onclick="plusS()" value="+">
+                                                <input type="button" style=" font-size: 15px; background-color: cadetblue;" onclick="minusS()" value="-"> -->
+                                            </div>
+                                        </div>
+                                        <b> : </b>
+                                        <div style="display: flex; flex-direction:column">
+                                            <span class="span-two-one" style="color: dimgray;"> Words </span>
+                                            <input type="text" class="Input-word" name="words" id="wordAmount"
+                                                onclick="wordsInTime(event)" placeholder="0000" disabled />
+                                            <div class="countin">
+                                                <input type="button" id="plusW"
+                                                    style=" font-size: 15px; display: none; background-color: cadetblue;"
+                                                    onclick="plusW()" value="+">
+                                                <input type="button" id="minusW"
+                                                    style=" font-size: 15px; display: none; background-color: cadetblue;"
+                                                    onclick="minusW()" value="-">
+                                            </div>
+                                        </div>
+                                        <b> : </b>
+                                        <div
+                                            style="display: flex; text-align: start; align-items: center; flex-direction:column">
+                                            <span class="span-two-one" style="color: dimgray; "> Points </span>
+                                            <input type="text" class="Input-in" name="reader" id="reader" disabled>
+                                            <div class="countin">
+                                            </div>
+                                        </div>
+                                    </span>
+                                    <!-- <span style="display: none;">
+                                        <span style="font-size: 20px;"> Words Per <strong> : </strong> </span>
+                                        <input type="button" value="Min" id="Minu" class="press-time" onclick="minut()" >
+                                        <input type="button" value="Sec"  id="Secd" class="press-time" onclick="sec()">
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- </div> -->
+
+            <!-- The keyboard and the game over Box -->
+            <div id="keyboard" class="keyboard">
+                <div class="design">
+                    <div class="contain">
+                        <div class="keys-1">
+                            <input type="button" onclick="nb()" value="esc" class=" esc" disabled>
+                            <input type="button" onclick="nb()" value="f1" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f2" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f3" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f4" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f5" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f6" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f7" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f8" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f9" class="pad f1-9" disabled>
+                            <input type="button" onclick="nb()" value="f10" class="pad f-keys" disabled>
+                            <input type="button" onclick="nb()" value="f11" class="pad f-keys" disabled>
+                            <input type="button" onclick="nb()" value="f12" class="pad f-keys" disabled>
+                            <input type="button" onclick="press(event)" value="pause" class="pad buttons" disabled>
+                            <input type="button" onclick="press(event)" value="prt sc" class="pad buttons" disabled>
+                            <input type="button" onclick="press(event)" value="delete" class="pad buttons" disabled>
+                        </div>
+                        <div class="keys-2">
+                            <button onclick="nb()" class=" sign"> ` </button>
+                            <button onmousedown="letterr(event)" onclick="numb(1)" class="pad-1 numbers"><sup>!</sup>
+                                <sub>1</sub></button>
+                            <button onmousedown="letterr(event)" onclick="numb(2)" class="pad-1 numbers"><sup>@</sup>
+                                <sub>2</sub> </button>
+                            <button onmousedown="letterr(event)" onclick="numb(3)" class="pad-1 numbers"><sup>#</sup>
+                                <sub>3</sub> </button>
+                            <button onmousedown="letterr(event)" onclick="numb(4)" class="pad-1 numbers"><sup>$</sup>
+                                <sub>4</sub> </button>
+                            <button onmousedown="letterr(event)" onclick="numb(5)" class="pad-1 numbers"><sup>%</sup>
+                                <sub>5</sub> </button>
+                            <button onmousedown="letterr(event)" onclick="numb(6)" class="pad-1 numbers"><sup>^</sup>
+                                <sub>6</sub> </button>
+                            <button onmousedown="letterr(event)" onclick="numb(7)" class="pad-1 numbers"><sup>&</sup>
+                                <sub>7</sub> </button>
+                            <button onmousedown="letterr(event)" onclick="numb(8)" class="pad-1 numbers"><sup>*</sup>
+                                <sub>8</sub> </button>
+                            <button onmousedown="letterr(event)" onclick="numb(9)" class="pad-1 numbers"><sup>(</sup>
+                                <sub>9</sub> </button>
+                            <button onmousedown="letterr(event)" onclick="numb(0)" class="pad-1 numbers"><sup>)</sup>
+                                <sub>0</sub> </button>
+                            <button onclick="numb('-')" class="pad-1 minus"> <sup> _ </sup> <sub> -</sub></button>
+                            <button onclick="numb('=')" class="pad-1 add"> <sup>+ </sup> <sub> =</sub> </button>
+                            <input type="button" value="Backspace" class="pad-1 Backspace" onclick="del()">
+                            <input onclick="nb()" type="button" value="home" class="pad-1 home">
+                        </div>
+                        <div class="keys-3">
+                            <input type="button" onchange="nb(this)" value="tab" class="tab">
+                            <input type="button" value="Q" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('q')">
+                            <input type="button" value="W" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('w')">
+                            <input type="button" value="E" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('e')">
+                            <input type="button" value="R" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('r')">
+                            <input type="button" value="T" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('t')">
+                            <input type="button" value="Y" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('y')">
+                            <input type="button" value="U" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('u')">
+                            <input type="button" value="I" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('i')">
+                            <input type="button" value="O" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('o')">
+                            <input type="button" value="P" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('p')">
+                            <button onclick="numb('[')" class="pad-2 bracket"> <sup> { </sup><sub>[ </sub> </button>
+                            <button onclick="numb(']')" class="pad-2 bracket"> <sup> } </sup><sub> ] </sub> </button>
+                            <input onclick="nb()" type="button" value="Insert" class="pad-2 insert">
+                            <input onclick="nb()" type="button" value="pg up" class="pad-2 up">
+                        </div>
+                        <div class="keys-4">
+                            <input onclick="cap()" type="button" value="CAP" class=" cap">
+                            <input type="button" id="light" class="light">
+                            <input type="button" value="A" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('a')">
+                            <input type="button" value="S" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('s')">
+                            <input type="button" value="D" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('d')">
+                            <input type="button" value="F" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('f')">
+                            <input type="button" value="G" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('g')">
+                            <input type="button" value="H" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('h')">
+                            <input type="button" value="J" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('j')">
+                            <input type="button" value="K" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('k')">
+                            <input type="button" value="L" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('l')">
+                            <button onclick="numb(';')" class="pad-3 bracket"> <sup> : </sup><sub> ; </sub> </button>
+                            <button onclick="numb('')" class="pad-3 bracket"> <sup> " </sup><sub> ' </sub> </button>
+                            <button onclick="numb('')" class="pad-3 bracket"> <sup> | </sup><sub> \ </sub> </button>
+                            <input onclick="nb()" type="button" value="ENTER" class="pad-3 enter">
+                            <input onclick="nb()" type="button" value="pg dn" class="pad-3 down">
+                        </div>
+                        <div class="keys-5">
+                            <input onclick="shift()" type="button" value="Shift" class="shift">
+                            <input type="button" id="Shift" class="Shift">
+                            <input type="button" value="Z" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('z')">
+                            <input type="button" value="X" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('x')">
+                            <input type="button" value="C" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('c')">
+                            <input type="button" value="V" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('v')">
+                            <input type="button" value="B" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('b')">
+                            <input type="button" value="N" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('n')">
+                            <input type="button" value="M" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('m')">
+                            <button onclick="numb(',')" class="pad-4 bracket"> <sup>
+                                    < </sup><sub> , </sub> </button>
+                            <button onclick="numb('.')" class="pad-4 bracket"> <sup> > </sup><sub> . </sub> </button>
+                            <button onclick="press(event)" class="pad-4 bracket"> <sup> ? </sup><sub> / </sub> </button>
+                            <input onclick="shift()" type="button" value="Shift" class="pad-4 shift">
+                            <input type="button" value="end" class="pad-4 end">
+                        </div>
+                        <div class="keys-6">
+                            <input type="button" value="ctrl" class="control">
+                            <input type="button" value="fn" class="pad-5 buttons">
+                            <input type="button" value="Win" class="pad-5 Win">
+                            <input type="button" value="alt" class="pad-5 buttons">
+                            <input onclick="space()" type="button" value="Space" class="pad-5 space">
+                            <input type="button" value="alt gr" class="pad-5 alt">
+                            <input type="button" value="&#128196;" class="pad-5 script">
+                            <input onclick="press(event)" type="button" value="ctrl" class="pad-5 control">
+                            <input onclick="nb()" type="button" value="&#8592;" class="pad-5 side">
+                            <div class="pad-5 go-flex">
+                                <input onclick="nb()" type="button" value="&#8593;" class="go">
+                                <input onclick="nb()" type="button" value="&#8595;" class="go">
+                            </div>
+                            <input onclick="nb()" type="button" value="&#8594;" class="pad-5 side">
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile responsive keyboard -->
+                <div class="design-small">
+                    <div class="contain-small">
+                        <div class="keys-2">
+                            <button onmousedown="letterr(event)" onclick="numb(1)" class="pad-1 numbers">1</button>
+                            <button onmousedown="letterr(event)" onclick="numb(2)" class="pad-1 numbers">2</button>
+                            <button onmousedown="letterr(event)" onclick="numb(3)" class="pad-1 numbers">3</button>
+                            <button onmousedown="letterr(event)" onclick="numb(4)" class="pad-1 numbers">4</button>
+                            <button onmousedown="letterr(event)" onclick="numb(5)" class="pad-1 numbers">5</button>
+                            <button onmousedown="letterr(event)" onclick="numb(6)" class="pad-1 numbers">6</button>
+                            <button onmousedown="letterr(event)" onclick="numb(7)" class="pad-1 numbers">7</button>
+                            <button onmousedown="letterr(event)" onclick="numb(8)" class="pad-1 numbers">8</button>
+                            <button onmousedown="letterr(event)" onclick="numb(9)" class="pad-1 numbers">9</button>
+                            <button onmousedown="letterr(event)" onclick="numb(0)" class="pad-1 numbers">0</button>
+                        </div>
+                        <div class="keys-3">
+                            <input type="button" value="Q" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('q')">
+                            <input type="button" value="W" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('w')">
+                            <input type="button" value="E" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('e')">
+                            <input type="button" value="R" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('r')">
+                            <input type="button" value="T" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('t')">
+                            <input type="button" value="Y" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('y')">
+                            <input type="button" value="U" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('u')">
+                            <input type="button" value="I" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('i')">
+                            <input type="button" value="O" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('o')">
+                            <input type="button" value="P" onmousedown="letterr(event)" class="pad-2 button"
+                                onclick="nb('p')">
+                            <input type="button" value="Backspace" class="pad-1 Backspace" onclick="del()">
+                        </div>
+                        <div class="keys-4">
+                            <input onclick="cap()" type="button" value="CAP" class=" cap">
+                            <input type="button" id="light" class="light">
+                            <input type="button" value="A" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('a')">
+                            <input type="button" value="S" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('s')">
+                            <input type="button" value="D" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('d')">
+                            <input type="button" value="F" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('f')">
+                            <input type="button" value="G" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('g')">
+                            <input type="button" value="H" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('h')">
+                            <input type="button" value="J" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('j')">
+                            <input type="button" value="K" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('k')">
+                            <input type="button" value="L" onmousedown="letterr(event)" class="pad-3 button"
+                                onclick="nb('l')">
+                            <input onclick="nb()" type="button" value="ENTER" class="pad-3 enter">
+                        </div>
+                        <div class="keys-5">
+                            <input onclick="shift()" type="button" value="Shift" class="shift">
+                            <input type="button" id="Shift" class="Shift">
+                            <input type="button" value="Z" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('z')">
+                            <input type="button" value="X" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('x')">
+                            <input type="button" value="C" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('c')">
+                            <input type="button" value="V" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('v')">
+                            <input type="button" value="B" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('b')">
+                            <input type="button" value="N" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('n')">
+                            <input type="button" value="M" onmousedown="letterr(event)" class="pad-4 button"
+                                onclick="nb('m')">
+                            <input onclick="shift()" type="button" value="Shift" class="pad-4 shift">
+                        </div>
+                        <div class="keys-6">
+                            <input onclick="space()" type="button" value="Space" class="pad-5 space">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result box -->
+                <div class="resultBox">
+                    <div id="resultBoxOne" style="display: none;" class="rBox rBox-resp-one">
+                        <p type="text" name="counter" id="present"
+                            style="width: 100%; font-size: 30px; color: #5443de; border: none; background-color: cadetblue; text-align: center; color: aliceblue;">
+                            Score Board </p>
+                        <div class="contain-input-results">
+                            <div class="groundFlex">
+                                Letters typed: <input id="noW" type="text" name="groundSelection"
+                                    class="input-one-results" disabled />
+                            </div>
+                        </div>
+                        <div class="contain-input-results">
+                            <div class="groundFlex">
+                                Correct typing: <input type="text" name="groundSelection" id="grandLevelOne"
+                                    class="input-one-results" disabled />
+                            </div>
+                        </div>
+                        <div class="contain-input-results">
+                            <div class="groundFlex">
+                                Wrong typing: <input type="text" name="groundSelection" id="grandLevelTwo"
+                                    class="input-one-results" disabled />
+                            </div>
+                        </div>
+                        <div class="contain-input-results">
+                            <div class="groundFlex">
+                                Score accuracy(%): <input type="text" name="groundSelection" id="grandLevelThree"
+                                    class="input-one-results" disabled />
+                            </div>
+                        </div>
+                        <div style="width: 100%; text-align: center; margin-top: 2px; color: black; font-size: 20px;">
+                            <div class="groundFlex-2">
+                                <input type="text" id="tickGreen" value="&#10003"
+                                    style=" width: 5%; color: green; font-weight: 600; font-size: 25px;" />
+                                No of figures(space):
+                                <input type="text" name="groundSelection" id="grandSelect" class="input-one-result"
+                                    disabled />
+                            </div>
+                        </div>
+                        <div style="width: 100%; text-align: center; margin-top: 2px; color: aqua; font-size: 20px;">
+                            <div class="groundFlex-2">
+                                <input type="text" id="tickCheck" value="&#10003"
+                                    style=" width: 5%; color: red; font-weight: 600; font-size: 25px;" />
+                                No of keys(space):
+                                <input type="text" name="groundSelection" id="grandKeySpace" value="0"
+                                    class="input-one-result" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="resultBoxTwo"  class="rBox rBox-resp-two">
+                        <p type="text" name="counter" id="presents"> Score Board </p>
+                        <!-- <div style="width: 100%; text-align: center; margin-top: 2px; color: darkslategray; font-size: 20px;">
+                        <div class="groundFlex" style="width:100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;"> 
+                            Number of  to be typed: <input type="text" name="groundSelection" id=" " style="width: 12.2%; text-align: center; border: none; color: darkcyan; font-size: 30px;" disabled /> 
+                        </div>
+                    </div> -->
+                        <div class="contain-inputTwo-box">
+                            <div class="groundFlex-box-two">
+                                Words typed: <input id="wordCountAmount" type="text" name="groundSelection"
+                                    class="input-two-results" disabled />
+                            </div>
+                        </div>
+                        <div class="contain-inputTwo-box">
+                            <div class="groundFlex-box-two">
+                                Letters typed: <input id="wordOne" type="text" name="groundSelection"
+                                    class="input-two-results" disabled />
+                            </div>
+                        </div>
+                        <div class="contain-inputTwo-box">
+                            <div class="groundFlex-box-two">
+                                Correct letters typed: <input type="text" name="groundSelection" id="wordCorrect"
+                                    class="input-two-results" disabled />
+                            </div>
+                        </div>
+                        <div class="contain-inputTwo-box">
+                            <div class="groundFlex-box-two">
+                                Wrong letters typed: <input type="text" name="groundSelection" id="wordWrong"
+                                    class="input-two-results" disabled />
+                            </div>
+                        </div>
+                        <div class="contain-inputTwo-box">
+                            <div class="groundFlex-box-two">
+                                Number of corrected letters: <input type="text" name="groundSelection"
+                                    id="testingOneTwo" class="input-two-results" disabled />
+                            </div>
+                        </div>
+                        <div class="contain-inputTwo-box">
+                            <div class="groundFlex-box-two">
+                                Final percentage result(%): <input type="text" name="groundSelection" id="resultTwo"
+                                    class="input-two-result" disabled />
+                            </div>
+                        </div>
+
+                        <!-- <input type="text" name="present" id="present" placeholder="No of words" style="width: 100%; font-size: 30px; color: aliceblue; border: none; text-align: center;" disabled />
+                    <input type="text" placeholder="words typed" id="wordOne" style=" width: 100%; text-align: center; border: none; color: #5443de; font-size: 30px; background-color: transparent;" disabled/>
+                    <input type="text" placeholder="words correct" id="wordCorrect" style=" width: 100%; text-align: center; border: none; color: #5443de; font-size: 30px; background-color: transparent;" disabled/>
+                    <input type="text" placeholder="words wrong" id="wordWrong" style=" width: 100%; text-align: center; border: none; color: #5443de; font-size: 30px; background-color: transparent;" disabled/>
+                    <input type="text" placeholder="Testing " id="testingOneTwo" style=" width: 100%; text-align: center; border: none; color: #5443de; font-size: 30px; background-color: transparent;" disabled/> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,630 @@
+@charset "utf-8";
+* {
+    width: vw;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* .body {
+    /* sizing */
+    /* width: 100%;
+    height: 100%;
+    padding-bottom: 10px; */
+    /* positioning */
+    /* position: relative;
+    background-color: darkblue; */
+    /* display: inline-flex;
+    flex-direction: column; */
+    /* overflow: hidden;
+    overflow-x: hidden; 
+} */
+
+/* The screen section */
+.page{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    display: none;
+    position: relative;
+    /* top:5px; */
+    /* padding: 5px; */
+}
+
+
+
+/* .br{
+    background-color: white;
+    width: 90%;
+    padding: .2px;
+    position: relative;
+    display: inline-flex;
+
+} */
+
+.headings{
+    background-color: darkblue;
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 98%;
+    border: 3px solid black;
+    /* color: ; width: 40%; */
+    /* background-color: blue;  */
+}
+
+
+.Title{
+    height: 85%;
+    text-align: center;
+    align-items: center;
+    /* background-color: black; */
+}
+
+marquee{
+    width: 70%;
+    height: 15%;
+    display: inline-flex;
+    align-self: center;
+    align-items: center;
+}
+
+.alignText{
+    display: flex;
+    flex-direction: column;
+    /* New css styling */
+    background-color: aqua;
+    /* Previous css styling */
+    /* width: 20%;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+     */
+}
+
+#form-fill{
+    width: 100%;
+    margin-bottom: 3px; 
+    color: black; 
+    height: 25px;
+    /* background-color: ; */
+    border: none;
+    font-size: 25px;
+    padding: 10px;
+}
+
+#form-check{
+    width: 100%;
+    margin-bottom: 3px;
+    color: black;
+    height: 25px;
+    /* background-color: ; */
+    border: none;
+    font-size: 25px;
+    padding: 10px;
+}
+
+#text-fill{
+    width: 100%;
+    color: black; 
+    padding: 10px;
+    height: 25px;
+    border: none;
+    font-size: 25px;
+    background-color: skyblue;
+
+}
+
+
+.testOneC{
+    color: gray;
+    border: 2px solid gray;
+}
+
+.testTwoC{
+    color: #24001b;
+    border: 2px solid #24001b;
+}
+
+
+.testOneScreenBox{
+    height: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+/* For the screen & buttons */
+.screen{
+    width: 70%;
+    height: 60%;
+    padding: 10px 23px 10px 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+
+.buttons-control{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    justify-self: center;
+    flex-wrap: nowrap;
+    position: relative;
+    /* left: ; */
+    /* top: 5px; */
+    /* padding-top: 50px; */
+    /* background-color: midnightblue; */
+}
+
+.center{
+    /* background-color:darkcyan; */
+    width: 100%;
+    height: 100%;
+    padding: 50px 30px 50px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: silver;
+    /* align-items: center; */
+    /* align-self: center; */
+    /* align-content: center; */
+    /* text-align: center; */
+
+}
+
+/*  For screen */
+
+/* #text{
+    width: 99.93%;
+    height: 100%;
+    font-size: 25px;
+    position: relative;
+} */
+/* 
+#text{
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border: 1px solid black;
+    width: 99.43%;
+    background-color: white;
+    height: 98.6%;
+    overflow: auto;
+    resize: both;
+    padding: 2px;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+} */
+
+/*  For controls */
+/* For the flexbox arrangements */
+
+.box-side{
+    width: 30%;
+    /* background-color: silver; */
+    /* align-self: center; */
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    /* padding: 30px; */
+    justify-content: center;
+}
+
+.instructBoxOne{
+    /* background-color: whitesmoke; */
+    color: darkslategray;
+    font-size: 20px; 
+    width: 80%; 
+    height: 100%;
+    padding: 10px;
+
+}
+
+#instrustionBoxOne{
+    padding: 3px; 
+    border: none;
+}
+
+.buttonsDivider{
+    width: 63%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: blue; */
+
+}
+
+.insideWord{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.timerDivider {
+    width: 50%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.box-center{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-self: center;
+    align-items: center;
+}
+/* .interface{
+    height: 25%;
+}
+
+
+.controls{
+    width: 100%;
+    height: 25%;
+    align-self: center;
+    align-items: center;
+    /* align-self: center; */
+    /* align-content: center; */
+    /* text-align: center; */
+/* } */ */
+
+
+/*  Running multiple functions */
+
+
+
+
+.box-1{
+    margin-top: 10px;
+}
+.interior{
+    width: 90px;
+    border: none;
+    background-color: silver;
+    border: 2px solid ;
+    border-radius: 15px;
+    padding: 5.1px;
+    /* font-size: 17px; */
+    align-self: center;
+}
+
+
+
+.inner{
+    width: 100%;
+    position: relative;
+    align-self: center;
+    align-items: center;
+    /* background-color: #0078d7; */
+    /* align-content: center; */
+    /* text-align: center; */
+    /* left: 100px; */
+}
+
+/* settings */
+
+hr{
+    /* margin-top: 1px;
+    margin-bottom: 1px; 
+    width: 229.2px; 
+    color: black;   */
+    visibility: hidden;
+}
+.rundown{ 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* background-color: aliceblue; */
+    /* margin-left: 20px; */
+}
+
+
+.box-inside{
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+#span{
+    width: 100%;
+    margin-top: 10px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+    /* width: 100%;  */
+    /* /* margin-left: px; */
+}
+
+.noW{
+    width: 20%;
+    padding: 2px;
+    margin: 0 10px;
+    font-size: 14px;
+    text-align: center;
+    background-color: silver;
+    border: 1px solid grey;
+}
+.window{
+    width: 30px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.time{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+#timeCountdown{
+    width: 25%;
+    font-size: 30px;
+    border: none;
+    text-align: center;
+    background-color: silver;
+    border: 2px solid ;
+    border-radius: 15px;
+    padding: 5.1px;
+}
+
+#timeDuration{
+    border: 1px solid black;
+    font-size: 15px;
+    background-color: silver;
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 7.1px;
+    text-align: center;
+    align-self: center;
+}
+
+.inner-2{
+    width: 70%;
+    position: relative;
+    /* left: 30px; */
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    /* align-self: center; */
+    align-content: center;
+    /* text-align: center; */
+
+}
+
+.play{
+    width: 50%;
+    /* margin-left: 7px; */
+    padding: 5px 2px;
+    font-size: 35px;
+    background-color: green;
+    border-radius: 3rem;
+    margin: 0 20px;
+    color: white;
+    border: none;
+    align-self: center;
+    align-items: center;
+    /* align-self: center; */
+    align-content: center;
+    /* text-align: center; */
+}
+
+.stop{
+    width: 50%;
+    /* margin-left: 7px; */
+    padding: 5px 2px;
+    font-size: 35px;
+    background-color: red;
+    margin: 0 20px;
+    border-radius: 3rem;
+    color: white;
+    border: none;
+    align-self: center;
+    align-items: center;
+    /* align-self: center; */
+    align-content: center;
+    /* text-align: center; */
+
+}
+.play-cut{
+    color: white;
+    font-size: 50px;
+    padding: 0 0px 0 2px;
+    display: flex;
+    flex-direction: row;
+}
+
+.box-2{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.instruction{
+    color: white;
+    font-size: 20px;
+    width: 70%;
+    padding: 9px;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    /* left: 90px; */
+    bottom: 2px;
+    background-color: cadetblue;
+}
+.level{
+    width: 100%;
+    position: relative;
+    top: 20px;
+    /* left: 30px; */
+    display: flex;
+    flex-direction: row;
+}
+.level-set{
+    width: 80%;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding: 7px;
+    font-size: 25px;
+    border-radius: 1rem;
+    background-color: lightblue;
+    color: #24001b;
+    border: 2px solid #24001b;
+    /* color: #5443de; */
+    /* border: none; */
+}
+
+
+.contain-input-box{ 
+    width: 100%;
+    text-align: center; 
+    margin-top: 2px; 
+    color: darkslategray; 
+    font-size: 21px;
+  }
+  
+  .ground-flex{
+    width: 100%; 
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items:center;
+  }
+  .boardTitle {
+    color: white;
+    width: 60%;
+    text-align: center;
+    background-color: cadetblue;
+    font-size: 18.5px;
+    margin-bottom: 3px;
+  }
+
+  .input-one-results{
+    width: 10%; 
+    text-align: center; 
+    border: none; 
+    color: darkcyan; 
+    font-size: 30px; 
+    background-color: transparent;
+  }
+  .groundFlex-2{
+    width:100%; 
+    color: black; 
+    position: relative; 
+    background-color: black; 
+    position: relative; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+
+  }
+  .input-one-result{
+    width: 10%;  
+    text-align: center; 
+    border: none; 
+    color:green; 
+    font-size: 30px; 
+    background-color: transparent;
+
+  }
+
+@media (max-width:1440px ){
+
+    .buttons-control{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        position: relative;
+        background-color: midnightblue;
+    }
+
+    
+    .window{
+        width: 30px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #timeCountdown{
+        width: 25%;
+        font-size: 20px;
+        border: none;
+        text-align: center;
+        background-color: silver;
+        border: 2px solid ;
+        border-radius: 15px;
+        padding: 3.1px;
+    }
+    
+    #timeDuration{
+        border: 1px solid black;
+        font-size: 15px;
+        background-color: silver;
+        border: 2px solid gray;
+        border-radius: 15px;
+        padding: 7.1px;
+        text-align: center;
+        align-self: center;
+    }
+    
+
+}
+@media (max-width:1070px ){
+
+    .buttons-control{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        position: relative;
+        background-color: midnightblue;
+    }
+
+    
+    .buttonsDivider{
+        width: 75%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        /* background-color: blue; */
+
+    }
+
+    .insideWord{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .timerDivider {
+        width: 50%;
+        /* background-color: yellow; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }    
+    .noW{
+        padding: 2px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+}

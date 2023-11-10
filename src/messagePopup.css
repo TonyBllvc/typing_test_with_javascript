@@ -1,0 +1,112 @@
+
+.popupContain{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    /* display: none; */
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 100vh;
+    overflow: none ;
+    overflow-x: hidden;
+    background-position: center;
+    z-index: 6;
+    background-blend-mode: darken;
+    background-color: #030921a8;
+    opacity: 0.9;
+}
+
+.InstructContainer {
+    width: 65%;
+    height: 200px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.writtenInstructions{
+    color: green;
+    font-size: x-large;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.authorName{
+    color: green;
+    padding-left: .3em;
+    font-size: x-large;
+    font-weight: 600;
+    font-size: 40px;
+
+}
+
+
+@media (max-width: 1072px ){
+    .InstructContainer {
+        width: 55%;
+        height: 150px;
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .writtenInstructions{
+    color: green;
+    font-size: x-large;
+    font-weight: 600;
+        font-size: 30px;
+    }
+    
+    .authorName{
+    color: green;
+    padding: .3em;
+    font-size: x-large;
+    font-weight: 600;
+        font-size: 30px;
+    }
+
+    .NextBtn{
+        background-color: green;
+        color: white;
+        padding: 7px 40px;
+        font-size: 25px;
+        border-radius: 3rem;
+    }
+    
+    .continueBtn{
+        background-color: green;
+        color: white;
+        padding: 7px 40px;
+        font-size: 25px;
+        border-radius: 3rem;
+    }
+
+}
+
+@media (max-width: 890px ){
+    .InstructContainer {
+        width: 55%;
+        height: 130px;
+        background-color: dimgrey;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .writtenInstructions{
+        color: white;
+        font-size: 22px;
+    }
+
+}
+

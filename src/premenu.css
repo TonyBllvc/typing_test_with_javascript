@@ -1,0 +1,176 @@
+@charset "uft-8";
+* {
+    width: vw;
+    margin: 0;
+    font-family: sans-serif;
+    outline: none;
+}
+
+.instructMe{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 100vh;
+    overflow: none ;
+    overflow-x: hidden;
+    background-position: center;
+    background-color: black;
+}
+
+.InstructContainer {
+    width: 65%;
+    height: 200px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.writtenInstructions{
+    color: green;
+    font-size: 40px;
+}
+
+.typeDetails{
+    /* width: 100px; */
+    background-color: #efeefbb2;
+    padding: 13px 15px;
+    font-size: 20px;
+    border: none;
+    color: black;
+
+
+}
+/* 
+.checkToggle{
+    background-color: green;
+    padding: 5px;
+    color: white;
+} */
+
+
+.NextBtn{
+  background-color: green;
+  color: white;
+  padding: 10px 80px;
+  font-size: 30px;
+  border-radius: 3rem;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+.NextBtn:hover{
+    background-color: rgb(1, 101, 1);
+}
+.NextBtn:active{
+    background-color: rgb(0, 72, 0);
+}
+
+.continueBtn{
+    background-color: green;
+    color: white;
+    padding: 10px 50px;
+    font-size: 30px;
+    border-radius: 3rem;
+  transition: all 0.5s ease-in-out;
+}
+.continueBtn:hover{
+    background-color: rgb(1, 101, 1);
+}
+
+.continueBtn:active{
+    background-color: rgb(0, 72, 0);
+}
+
+@media (max-width: 1072px ){
+    .InstructContainer {
+        width: 55%;
+        height: 150px;
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .writtenInstructions{
+        color: green;
+        font-size: 30px;
+    }
+
+    .NextBtn{
+        background-color: green;
+        color: white;
+        padding: 7px 40px;
+        font-size: 25px;
+        border-radius: 3rem;
+    }
+    
+    .continueBtn{
+        background-color: green;
+        color: white;
+        padding: 7px 40px;
+        font-size: 25px;
+        border-radius: 3rem;
+    }
+
+    .typeDetails{
+    /* width: 100px; */
+    background-color: #efeefbb2;
+    padding: 13px 15px;
+    font-size: 18px;
+    border: none;
+    color: black;
+
+
+}
+}
+
+@media (max-width: 890px ){
+    .InstructContainer {
+        width: 55%;
+        height: 130px;
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .writtenInstructions{
+        color: green;
+        font-size: 22px;
+    }
+
+.typeDetails{
+    /* width: 100px; */
+    background-color: #efeefbb2;
+    padding: 13px 15px;
+    font-size: 15px;
+    border: none;
+    color: black;
+
+
+}
+
+}
+
+
+
+/* .loadText{
+    /* background-color: slategray; */
+    /* background: yellow; */
+    /* color: aliceblue; */
+    /* animation: load 2300ms ; */
+    /* z-index: 99; */
+/* } */ */

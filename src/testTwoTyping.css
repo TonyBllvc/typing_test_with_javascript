@@ -1,0 +1,908 @@
+@charset "utf-8";
+* {
+  width: vw;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.secondInterface {
+  background-color: blue;
+  height: 40%;
+  overflow: hidden;
+  /* display: none; */
+  /* display: flex; */
+  position: relative;
+  /* z-index: 4; */
+}
+
+.secIntContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* justify-content: space-around; */
+  /* background-color: white; */
+}
+
+.testTwoScreenBox {
+  height: 40%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+/* for the screen display */
+
+.SecIntScreen {
+  width: 70%;
+  padding: 0 50px 0 0;
+  /* background-color: transparent; */
+  /* z-index: 99; */
+  /* font-size: 35px; */
+}
+
+.testButtonTwo {
+  width: 30%;
+  background-color: aquamarine;
+}
+
+/* For the text Button two */
+.testButtonTwoBox {
+  height: 100%;
+  width: 100%;
+  background-color: silver;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnTest {
+  width: 30%;
+  font-size: 20px;
+  background-color: lightblue;
+  /* color: #24001b; */
+  font-weight: 500;
+  padding: 5px;
+}
+
+.firstTest {
+  color: #24001b;
+  border: 1px solid #24001b;
+}
+
+.secondTest {
+  color: gray;
+  border: 2px solid gray;
+}
+
+.cancelBtnTest {
+  width: 27%;
+  font-size: 20px;
+  background-color: greenyellow;
+  color: green;
+  font-weight: 500;
+  border: 1.2px solid green;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+/* To hold the input screen box till i design it */
+
+#loadTextValue {
+  width: 100%;
+  color: black;
+  padding: 10px;
+  height: 25px;
+  border: none;
+  text-align: center;
+  font-size: 25px;
+  margin: 4px 10px 0 15px;
+  /* background-color: whitesmoke; */
+}
+
+#checkForm {
+  width: 100%;
+  color: black;
+  padding: 10px;
+  height: 25px;
+  border: none;
+  font-size: 25px;
+  margin: 4px 10px 0 15px;
+  text-align: center;
+  /* background-color:rgba(202, 193, 193, 0.552) */
+}
+
+.secIntScreenContainer {
+  height: 55px;
+  width: 100%;
+  margin: 4px 0 10px 22px;
+  text-align: center;
+  /* font-size: 25px; */
+  /* z-index: 99; */
+}
+
+#text {
+  /* -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea; */
+  background-color: lightsteelblue;
+  font-size: 25px;
+  overflow: hidden;
+  overflow-x: hidden;
+  resize: both;
+  font: xx-large -moz-fixed;
+  font: -webkit-large-control;
+}
+/* For the buttons */
+.SecIntButtons {
+  height: 50%;
+  width: 100%;
+  position: relative;
+  align-content: center;
+  align-items: center;
+  background-color: blueviolet;
+}
+
+.SecIntBtnContainer {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  padding: 50px 0 50px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-color: silver;
+  /* align-content: center; */
+}
+
+/* Inside the buttons container */
+/* Grouping each contain item within */
+
+.speedDisplay-width {
+  width: 26%;
+  /* background-color: yellow; */
+  /* background-color: silver; */
+}
+
+.countdownTimer-width {
+  width: 50%;
+  /* background-color: silver; */
+}
+
+.timeRange-width {
+  width: 24%;
+  /* margin-left: 45px; */
+  /* background-color: brown; */
+  /* background-color: silver; */
+}
+
+/* Multi function classes */
+b {
+  color: dimgray;
+  font-size: 34px;
+  position: relative;
+  bottom: 5px;
+  align-self: center;
+  /* width: 8%; */
+}
+
+strong {
+  color: dimgray;
+  font-size: 27px;
+  position: relative;
+  align-self: center;
+}
+
+.countin {
+  margin-top: 2px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.center-flex {
+  /* align-self: center; */
+  align-items: center;
+  /* align-content: center; */
+  display: flex;
+  flex-direction: column;
+  /* padding: 30px; */
+  justify-content: center;
+}
+
+.inner-flex {
+  border: 2.24px solid dimgray;
+  padding: 35px;
+  background-color: darkgray;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeRanContaine-respo {
+  margin-right: 5px;
+}
+.instructBoxTwo {
+  width: 100%;
+  color: darkslategray;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* align-content: center; */
+  align-items: center;
+}
+
+#instructionBoxTwo {
+  width: 100%;
+  font-size: 18px;
+}
+
+.Input {
+  width: 30px;
+  background-color: lightgray;
+  color: black;
+  padding: 7.1px;
+  font-size: 19px;
+  text-align: center;
+  border: none;
+}
+
+.Input-word {
+  width: 45px;
+  background-color: lightgray;
+  color: black;
+  padding: 7.1px;
+  font-size: 19px;
+  text-align: center;
+  border: none;
+}
+
+.Input-extra {
+  width: 30px;
+  border: none;
+  background-color: lightgray;
+  color: black;
+  padding: 10.1px;
+  font-size: 27px;
+
+  /* border: none; */
+}
+
+.lastEntry {
+  width: 30px;
+  border: none;
+  background-color: lightgray;
+  font-size: 20px;
+  text-align: center;
+  padding: 4.3px;
+}
+
+.middle-inner-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  /* background-color: yellow; */
+  /* align-items:center; */
+}
+
+/* Still in works */
+
+/* .reset-box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+} */
+/* For the timeRange */
+
+.press-time {
+  /* width: 30px; */
+  background-color: lightblue;
+  color: #24001b;
+  margin-top: 5px;
+  padding: 2.1px 5px 2.1px 5px;
+  /* height: 40px; */
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  /* border-radius: 10px; */
+}
+/* .alignTimeRange{
+    width: 50%;
+    background-color: azure;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-self: center;
+    align-items: center;
+
+} */
+
+/* For the countdown timer */
+
+.countDownTimerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: silver;
+}
+
+.middle-center-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+
+  /* align-items: baseline; */
+}
+
+.middle-inner-flex-circle {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  /* height: ; */
+  border-radius: 50%;
+  height: 100%;
+  border: 2.4px solid dimgray;
+  background-color: silver;
+}
+
+.applyBtn {
+  width: 30%;
+  height: 100%;
+  margin-right: 25px;
+  /* background-color: yellow; */
+}
+
+.span-one {
+  color: white;
+  width: 100%;
+  text-align: center;
+  background-color: cadetblue;
+  font-size: 18.5px;
+  margin-bottom: 3px;
+}
+
+.span-two {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.stopBtn {
+  width: 30%;
+  height: 100%;
+  margin-left: 25px;
+  /* background-color: yellow; */
+}
+
+.btnContainer {
+  align-self: flex-end;
+  position: relative;
+  top: 35px;
+}
+
+.press {
+  /* width: 30px; */
+  /* background-color: rgb(97, 97, 240); */
+  color: rgb(172, 162, 162);
+  /* color: rgb(56, 65, 75); */
+  /* background-color: rgb(24, 210, 24); */
+  /* background-color: #5443de; */
+  padding: 17.1px 45px 17.1px 45px;
+  /* height: 40px; */
+  font-size: 25px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+}
+
+.press-start {
+  /* width: 30px; */
+  color: rgb(172, 162, 162);
+  padding: 5.1px 25px 5.1px 25px;
+  /* height: 40px; */
+  font-size: 25px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+}
+
+/* For the speedDisplay */
+.speedDispContainer {
+  width: 55%;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  justify-content: center;
+  /* height: 50%; */
+}
+
+.yourSpeed {
+  width: 100%;
+  height: 50%;
+  font-size: 20px;
+  text-align: center;
+  word-spacing: 5px;
+  letter-spacing: 2.3px;
+  /* background-color: aqua; */
+}
+
+.flex-box-span {
+  display: flex;
+  flex-direction: row;
+  /* background-color: black; */
+}
+
+.reader {
+  width: 80%;
+  height: 50%;
+  align-items: center;
+}
+
+.Input-in {
+  width: 30px;
+  background-color: lightgray;
+  color: black;
+  padding: 7.1px;
+  font-size: 19px;
+  text-align: center;
+  border: none;
+}
+.wordper {
+  width: 75%;
+  /* height: 100%; */
+  border: none;
+  text-align: center;
+  /* align-self: center; */
+  background-color: rgba(206, 213, 222, 0);
+  color: darkslategrey;
+}
+.instructTitle {
+  color: white;
+  width: 100%;
+  text-align: center;
+  background-color: cadetblue;
+  font-size: 18.5px;
+  margin-bottom: 3px;
+}
+
+.span-two-one {
+  font-size: 13px;
+  text-align: center;
+}
+
+.contain-inputTwo-box {
+  width: 100%;
+  text-align: center;
+  margin-top: 2px;
+  color: darkslategray;
+  font-size: 21px;
+}
+
+.groundFlex-box-two {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-two-results {
+  width: 15.5%;
+  padding-right: 17px;
+  text-align: center;
+  border: none;
+  color: darkcyan;
+  font-size: 26px;
+  background-color: transparent;
+}
+
+.input-two-result {
+  width: 15.5%;
+  padding-right: 10px;
+  text-align: center;
+  border: none;
+  color: darkcyan;
+  font-size: 23px;
+  background-color: transparent;
+}
+
+#presents {
+  width: 100%;
+  font-size: 25px;
+  color: #5443de;
+  border: none;
+  background-color: cadetblue;
+  text-align: center;
+  color: aliceblue;
+}
+
+@media (max-width: 1352px) {
+  .title {
+    background-color: cadetblue;
+  }
+
+  .SecIntBtnContainer {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    padding: 60px 0 60px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: silver;
+    /* align-content: center; */
+  }
+
+  .inner-flex {
+    border: 2.24px solid dimgray;
+    padding: 15px;
+    background-color: darkgray;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #instructionBoxTwo {
+    font-size: 15px;
+    padding: 0;
+  }
+
+  .instructTitle {
+    color: white;
+    width: 100%;
+    text-align: center;
+    background-color: cadetblue;
+    font-size: 15.5px;
+    margin-bottom: 3px;
+  }
+
+  .press {
+    /* width: 30px; */
+    background-color: lightblue;
+    color: gray;
+    padding: 7px 20px 7px 20px;
+    /* height: 40px; */
+    font-size: 20px;
+    border: none;
+    border-radius: 2rem;
+  }
+
+  .speedDisplay-width {
+    width: 26%;
+    /* background-color: yellow; */
+    background-color: silver;
+  }
+
+  .countdownTimer-width {
+    width: 50%;
+    background-color: silver;
+  }
+
+  .timeRange-width {
+    width: 24%;
+    /* margin-left: 45px; */
+    /* background-color: brown; */
+    background-color: silver;
+  }
+
+  .countDownTimerContainer {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: silver;
+  }
+
+  .middle-inner-flex-circle {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* height: ; */
+    border-radius: 50%;
+    height: 100%;
+    border: 2.4px solid dimgray;
+    background-color: silver;
+  }
+
+  .press-start {
+    /* width: 30px; */
+    background-color: lightblue;
+    color: gray;
+    padding: 2px 15px 2px 15px;
+    /* height: 40px; */
+  border: none;
+    font-size: 25px;
+    border-radius: 10rem;
+  }
+
+  .timeRanContaine-respo {
+    margin-right: 60px;
+  }
+
+  .Input-extra {
+    width: 30px;
+    border: none;
+    background-color: lightgray;
+    color: black;
+    padding: 3.6px;
+    font-size: 25px;
+    text-align: center;
+
+    /* border: none; */
+  }
+
+  .span-one {
+    color: white;
+    width: 100%;
+    text-align: center;
+    background-color: cadetblue;
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  .span-two-one {
+    font-size: 13px;
+  }
+  #presents {
+    width: 100%;
+    font-size: 25px;
+    color: #5443de;
+    border: none;
+    background-color: cadetblue;
+    text-align: center;
+    color: aliceblue;
+  }
+
+  .contain-inputTwo-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+    color: darkslategray;
+    font-size: 21px;
+  }
+
+  .groundFlex-box-two {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input-two-results {
+    width: 15.5%;
+    padding-right: 10px;
+    text-align: center;
+    border: none;
+    color: darkcyan;
+    font-size: 23px;
+    background-color: transparent;
+  }
+
+  .input-two-result {
+    width: 15.5%;
+    padding-right: 10px;
+    text-align: center;
+    border: none;
+    color: darkcyan;
+    font-size: 23px;
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 1570px) {
+  #presents {
+    width: 100%;
+    font-size: 25px;
+    color: #5443de;
+    border: none;
+    background-color: cadetblue;
+    text-align: center;
+    color: aliceblue;
+  }
+
+  .rBox-resp-two {
+    line-height: 35px;
+  }
+
+  .contain-inputTwo-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+    color: darkslategray;
+    font-size: 18px;
+  }
+
+  .groundFlex-box-two {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input-two-results {
+    width: 15.5%;
+    padding-right: 10px;
+    text-align: center;
+    border: none;
+    color: darkcyan;
+    font-size: 19px;
+    background-color: transparent;
+  }
+
+  .input-two-result {
+    width: 15.5%;
+    padding-right: 10px;
+    text-align: center;
+    border: none;
+    color: darkcyan;
+    font-size: 19px;
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 1320px) {
+  #presents {
+    width: 100%;
+    font-size: 25px;
+    color: #5443de;
+    border: none;
+    background-color: cadetblue;
+    text-align: center;
+    color: aliceblue;
+  }
+  .rBox-resp-two {
+    line-height: 40px;
+  }
+  .contain-inputTwo-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+    color: darkslategray;
+    font-size: 15px;
+  }
+
+  .groundFlex-box-two {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input-two-results {
+    width: 15.5%;
+    padding-right: 10px;
+    text-align: center;
+    border: none;
+    color: darkcyan;
+    font-size: 15px;
+    background-color: transparent;
+  }
+
+  .input-two-result {
+    width: 11.4%;
+    padding-right: 10px;
+    text-align: center;
+    border: none;
+    color: darkcyan;
+    font-size: 15px;
+    background-color: transparent;
+  }
+}
+@media (mxn-width: 1130px) {
+  .rBox-resp-two {
+    line-height: 15px;
+  }
+  #presents {
+    width: 100%;
+    font-size: 7px;
+    color: #5443de;
+    border: none;
+    background-color: cadetblue;
+    text-align: center;
+    color: aliceblue;
+  }
+  .contain-inputTwo-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+    color: darkslategray;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .rBox-resp-two {
+    line-height: 30px;
+  }
+  #presents {
+    width: 100%;
+    font-size: 10px;
+    color: #5443de;
+    border: none;
+    background-color: cadetblue;
+    text-align: center;
+    color: aliceblue;
+  }
+}
+
+@media (max-width: 1108px) {
+  .rBox-resp-two {
+    line-height: 27px;
+  }
+  #presents {
+    width: 100%;
+    font-size: 20px;
+    color: #5443de;
+    border: none;
+    background-color: cadetblue;
+    text-align: center;
+    color: aliceblue;
+  }
+  .contain-inputTwo-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+    color: darkslategray;
+    font-size: 12px;
+  }
+}
+@media (max-width: 1024px) {
+  .rBox-resp-two {
+    line-height: 30px;
+  }
+  #presents {
+    width: 100%;
+    font-size: 15px;
+    color: #5443de;
+    border: none;
+    background-color: cadetblue;
+    text-align: center;
+    color: aliceblue;
+  }
+  .contain-inputTwo-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+    color: darkslategray;
+    font-size: 12px;
+  }
+}
