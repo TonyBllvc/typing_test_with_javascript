@@ -9,7 +9,7 @@
 //         document.getElementById("text-fill").disabled = true;
 //         document.getElementById("text").disabled = true;
 //         document.getElementById("word").disabled = true;
-//         // document.getElementById("instructionBoxOne").innerHTML = " For test one: Your test has disabled. To enable test, please select from any of the levels below ie. Easy, Intermediate, Hard. Then ... ";
+//         // document.getElementById("instructionBoxOne").innerHTML = " For test one: Your test has disabled. To enable test, please select from any of the levels below ie. Easy, Medium, Hard. Then ... ";
 
 //     }
 //     if(!mins.value || !mins.value){
@@ -350,7 +350,7 @@ function start() {
         document.getElementById("text").focus();
         document.getElementById("text").placeholder = "Begin typing test!";
         document.getElementById("checkForm").placeholder = "Press space or enter to bring next word";
-        document.getElementById("instructionBoxTwo").innerHTML = "Press 'Stop' to end Test Two!";
+        document.getElementById("instructionBoxTwo").innerHTML = "Press 'Enter' or 'Space' on your keyboard to change set of words. Press 'Stop' to end Test Two!";
 
 
     }

@@ -132,14 +132,14 @@
                         <input type="text" id="form-fill" name="form" placeholder="Input form to be typed" disabled>
                         <input type="text" id="form-check" name="form" placeholder="Display to check" disabled>
                         <input type="text" id="text-fill" name="text" onkeyup="keyCl(event)" onfocus="keyCl(event)"
-                            onchange="keyCl(event)" onclick="keyCl(event)" onkeyup="backspace(event)" required
+                            onchange="keyCl(event)" onclick="keyCl(event)" onkeydown="keyCle(event)" onkeyup="backspace(event)" required
                             autocomplete="off" spellcheck="false">
                     </form>
                     <div class="testButtonTwo">
                         <div id="BODYONE" class="testButtonTwoBox">
                             <input type="button" value="Test One" id="testOneC" onclick="loadingSyncOne()"
                                 class="btnTest testOneC">
-                            <input type="button" value="Reload" id="cancel" onclick="cancelButtonOne()"
+                            <input type="button" value="Reset" id="cancel" onclick="cancelButtonOne()"
                                 class="cancelBtnTest">
                             <input type="button" value="Test Two" id="testTwoC" onclick="loadingSyncTwo()"
                                 class="btnTest testTwoC">
@@ -154,8 +154,9 @@
                         <div class="box-side">
                             <div class="instructBoxOne">
                                 <p id="INSTRUCTIONONE" class="instructTitle"> Instructions </p>
-                                <p id="instructionBoxOne"> For test one: Your test has disabled. To enable test, please
-                                    select from any of the levels below ie. Easy, Intermediate, Hard. Then ... </p>
+                                <p id="instructionBoxOne"> For test one: Your test is disabled. To enable test, please
+                                    select from any of the levels below ie. Easy, Medium, Hard. Then ...
+                                </p>
                             </div>
                         </div>
                         <div class="box-center">
@@ -227,7 +228,7 @@
                             <div id="BODYTHREE" class="testButtonTwoBox">
                                 <input type="button" value="Test One" id="firstTest" onclick="loadingSyncOne()"
                                     class="btnTest firstTest" />
-                                <input type="button" value="Reload" id="cancel" class="cancelBtnTest"
+                                <input type="button" value="Reset" id="cancel" class="cancelBtnTest"
                                     onclick="cancelButtonTwo()" />
                                 <input type="button" value="Test Two" id="secondTest" onclick="loadingSyncTwo()"
                                     class="btnTest secondTest" />
@@ -236,10 +237,10 @@
                     </div>
                     <div class="SecIntButtons">
                         <div id="BODYFOUR" class="SecIntBtnContainer">
-                            <div class="center-flex speedDisplay-width">
-                                <div id="BODYFIVE" class="inner-flex speedDispContainer" id="speedDisplay">
+                            <div id="init" class="center-flex speedDisplay-width">
+                                <div id="BODYFIVE"  class="inner-flex speedDispContainer" id="speedDisplay">
                                     <div type="button" class="instructBoxTwo">
-                                        <p class="instructTitle"> Instructions </p>
+                                        <p id="INSTRUCTIONFOUR" class="instructTitle"> InstructionS </p>
                                         <p id="instructionBoxTwo"> For Test two. Your test has been disabled. To enable
                                             test, set your test values. First input a time duration (Mins & Secs) with
                                             the
@@ -249,7 +250,7 @@
                             </div>
                             <div class="middle-center-flex countdownTimer-width">
                                 <div id="BODYSIX" class="countDownTimerContainer">
-                                    <div class="middle-inner-flex applyBtn">
+                                    <div id="boardOne" class="middle-inner-flex applyBtn">
                                         <div class="btnContainer">
                                             <input type="button" id="apply" class="press" onclick="apply()"
                                                 value="Apply">
@@ -270,7 +271,7 @@
                                                 class="press-start">
                                         </span>
                                     </div>
-                                    <div class="middle-inner-flex stopBtn">
+                                    <div  id="boardTwo" class="middle-inner-flex stopBtn">
                                         <div class="btnContainer">
                                             <input type="button" id="stopping" class="press" onclick="endStop()"
                                                 value="Stop">
@@ -280,7 +281,7 @@
                             </div>
                             <div class="center-flex timeRange-width">
                                 <div id="BODYSEVEN" class="inner-flex timeRanContaine-respo" id="timeRange">
-                                    <span class="span-one">
+                                    <span id="INSTRUCTIONFIVE" class="span-one">
                                         Set your test value, then begin
                                     </span>
                                     <span class="span-two">
@@ -368,25 +369,25 @@
                         </div>
                         <div class="keys-2">
                             <button onclick="nb()" class=" sign"> ` </button>
-                            <button onmousedown="letterr(event)" onclick="numb(1)" class="pad-1 numbers"><sup>!</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('1')" class="pad-1 numbers"><sup>!</sup>
                                 <sub>1</sub></button>
-                            <button onmousedown="letterr(event)" onclick="numb(2)" class="pad-1 numbers"><sup>@</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('2')" class="pad-1 numbers"><sup>@</sup>
                                 <sub>2</sub> </button>
-                            <button onmousedown="letterr(event)" onclick="numb(3)" class="pad-1 numbers"><sup>#</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('3')" class="pad-1 numbers"><sup>#</sup>
                                 <sub>3</sub> </button>
-                            <button onmousedown="letterr(event)" onclick="numb(4)" class="pad-1 numbers"><sup>$</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('4')" class="pad-1 numbers"><sup>$</sup>
                                 <sub>4</sub> </button>
-                            <button onmousedown="letterr(event)" onclick="numb(5)" class="pad-1 numbers"><sup>%</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('5')" class="pad-1 numbers"><sup>%</sup>
                                 <sub>5</sub> </button>
-                            <button onmousedown="letterr(event)" onclick="numb(6)" class="pad-1 numbers"><sup>^</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('6')" class="pad-1 numbers"><sup>^</sup>
                                 <sub>6</sub> </button>
-                            <button onmousedown="letterr(event)" onclick="numb(7)" class="pad-1 numbers"><sup>&</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('7')" class="pad-1 numbers"><sup>&</sup>
                                 <sub>7</sub> </button>
-                            <button onmousedown="letterr(event)" onclick="numb(8)" class="pad-1 numbers"><sup>*</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('8')" class="pad-1 numbers"><sup>*</sup>
                                 <sub>8</sub> </button>
-                            <button onmousedown="letterr(event)" onclick="numb(9)" class="pad-1 numbers"><sup>(</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('9')" class="pad-1 numbers"><sup>(</sup>
                                 <sub>9</sub> </button>
-                            <button onmousedown="letterr(event)" onclick="numb(0)" class="pad-1 numbers"><sup>)</sup>
+                            <button onmousedown="letterr(event)" onclick="nb('0')" class="pad-1 numbers"><sup>)</sup>
                                 <sub>0</sub> </button>
                             <button onclick="numb('-')" class="pad-1 minus"> <sup> _ </sup> <sub> -</sub></button>
                             <button onclick="numb('=')" class="pad-1 add"> <sup>+ </sup> <sub> =</sub> </button>
@@ -493,16 +494,16 @@
                 <div class="design-small">
                     <div class="contain-small">
                         <div class="keys-2">
-                            <button onmousedown="letterr(event)" onclick="numb(1)" class="pad-1 numbers">1</button>
-                            <button onmousedown="letterr(event)" onclick="numb(2)" class="pad-1 numbers">2</button>
-                            <button onmousedown="letterr(event)" onclick="numb(3)" class="pad-1 numbers">3</button>
-                            <button onmousedown="letterr(event)" onclick="numb(4)" class="pad-1 numbers">4</button>
-                            <button onmousedown="letterr(event)" onclick="numb(5)" class="pad-1 numbers">5</button>
-                            <button onmousedown="letterr(event)" onclick="numb(6)" class="pad-1 numbers">6</button>
-                            <button onmousedown="letterr(event)" onclick="numb(7)" class="pad-1 numbers">7</button>
-                            <button onmousedown="letterr(event)" onclick="numb(8)" class="pad-1 numbers">8</button>
-                            <button onmousedown="letterr(event)" onclick="numb(9)" class="pad-1 numbers">9</button>
-                            <button onmousedown="letterr(event)" onclick="numb(0)" class="pad-1 numbers">0</button>
+                            <button onmousedown="letterr(event)" onclick="nb('1')" class="pad-1 numbers">1</button>
+                            <button onmousedown="letterr(event)" onclick="nb('2')" class="pad-1 numbers">2</button>
+                            <button onmousedown="letterr(event)" onclick="nb('3')" class="pad-1 numbers">3</button>
+                            <button onmousedown="letterr(event)" onclick="nb('4')" class="pad-1 numbers">4</button>
+                            <button onmousedown="letterr(event)" onclick="nb('5')" class="pad-1 numbers">5</button>
+                            <button onmousedown="letterr(event)" onclick="nb('6')" class="pad-1 numbers">6</button>
+                            <button onmousedown="letterr(event)" onclick="nb('7')" class="pad-1 numbers">7</button>
+                            <button onmousedown="letterr(event)" onclick="nb('8')" class="pad-1 numbers">8</button>
+                            <button onmousedown="letterr(event)" onclick="nb('9')" class="pad-1 numbers">9</button>
+                            <button onmousedown="letterr(event)" onclick="nb('0')" class="pad-1 numbers">0</button>
                         </div>
                         <div class="keys-3">
                             <input type="button" value="Q" onmousedown="letterr(event)" class="pad-2 button"
@@ -529,7 +530,7 @@
                         </div>
                         <div class="keys-4">
                             <input onclick="cap()" type="button" value="CAP" class=" cap">
-                            <input type="button" id="light" class="light">
+                            <input type="button" id="lightMobile" class="lightMobile">
                             <input type="button" value="A" onmousedown="letterr(event)" class="pad-3 button"
                                 onclick="nb('a')">
                             <input type="button" value="S" onmousedown="letterr(event)" class="pad-3 button"
@@ -552,7 +553,7 @@
                         </div>
                         <div class="keys-5">
                             <input onclick="shift()" type="button" value="Shift" class="shift">
-                            <input type="button" id="Shift" class="Shift">
+                            <input type="button" id="ShiftMobile" class="ShiftMobile">
                             <input type="button" value="Z" onmousedown="letterr(event)" class="pad-4 button"
                                 onclick="nb('z')">
                             <input type="button" value="X" onmousedown="letterr(event)" class="pad-4 button"
@@ -576,7 +577,7 @@
                 </div>
 
                 <!-- Result box -->
-                <div class="resultBox">
+                <div id="resultssBox" class="resultBox">
                     <div id="resultBoxOne" style="display: none;" class="rBox rBox-resp-one">
                         <p type="text" name="counter" id="present"
                             style="width: 100%; font-size: 30px; color: #5443de; border: none; background-color: cadetblue; text-align: center; color: aliceblue;">
@@ -608,7 +609,7 @@
                         <div style="width: 100%; text-align: center; margin-top: 2px; color: black; font-size: 20px;">
                             <div class="groundFlex-2">
                                 <input type="text" id="tickGreen" value="&#10003"
-                                    style=" width: 5%; color: green; font-weight: 600; font-size: 25px;" />
+                                    style=" width: 20px; color: green; font-weight: 600; font-size: 25px;" />
                                 No of figures(space):
                                 <input type="text" name="groundSelection" id="grandSelect" class="input-one-result"
                                     disabled />
@@ -617,14 +618,14 @@
                         <div style="width: 100%; text-align: center; margin-top: 2px; color: aqua; font-size: 20px;">
                             <div class="groundFlex-2">
                                 <input type="text" id="tickCheck" value="&#10003"
-                                    style=" width: 5%; color: red; font-weight: 600; font-size: 25px;" />
+                                    style=" width: 20px; color: red; font-weight: 600; font-size: 25px;" />
                                 No of keys(space):
                                 <input type="text" name="groundSelection" id="grandKeySpace" value="0"
                                     class="input-one-result" disabled />
                             </div>
                         </div>
                     </div>
-                    <div id="resultBoxTwo"  class="rBox rBox-resp-two">
+                    <div id="resultBoxTwo" class="rBox rBox-resp-two">
                         <p type="text" name="counter" id="presents"> Score Board </p>
                         <!-- <div style="width: 100%; text-align: center; margin-top: 2px; color: darkslategray; font-size: 20px;">
                         <div class="groundFlex" style="width:100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;"> 

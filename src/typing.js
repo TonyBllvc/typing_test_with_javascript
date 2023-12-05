@@ -32,7 +32,7 @@
     //     document.getElementById("text-fill").disabled = true;
     //     document.getElementById("text").disabled = true;
     //     document.getElementById("word").disabled = true;
-    //     // document.getElementById("instructionBoxOne").innerHTML = " For test one: Your test has disabled. To enable test, please select from any of the levels below ie. Easy, Intermediate, Hard. Then ... ";
+    //     // document.getElementById("instructionBoxOne").innerHTML = " For test one: Your test has disabled. To enable test, please select from any of the levels below ie. Easy, Medium, Hard. Then ... ";
 
     // }
     // if(!mins.value || !mins.value){
@@ -323,7 +323,7 @@ function cancelButtonOne(){
 
     clearInterval(setTheTime); 
 
-    document.getElementById("instructionBoxOne").innerHTML = "For test one: Your test has disabled. To enable test, please select from any of the levels below ie. Easy, Intermediate, Hard. Then ...";
+    document.getElementById("instructionBoxOne").innerHTML = "For test one: Your test is disabled. To enable test, please select from any of the levels below ie. Easy, Medium, Hard. Then ...";
 
     document.getElementById("text-fill").disabled = true;
     document.getElementById("medium").disabled = false;
@@ -550,25 +550,74 @@ function end() {
 
 
 function del(){
-    var noW = document.getElementById("noW");
-    var noOfWords = document.getElementById("text-fill");
-    var Size = noOfWords.value.length;
-    if (Size > 0) {
-        noW.value--;
-        document.getElementById("text-fill").value = document.getElementById("text-fill").value.slice(0, -1);
-    } else if( Size === 0){
-        // Size = 46;
-        // alert(Size);
-        noW.value = null;
-    }
+    document.getElementById("instructionBoxOne").innerHTML = "Can not clear value";// var noW = document.getElementById("noW");
+    // var noOfWords = document.getElementById("text-fill");
+    // var grandLevel = document.getElementById("grandLevel");
+    // var grandKeySpace = document.getElementById("grandKeySpace");
+
+    // var Size = noOfWords.value.length;
+    // if (Size > 0) {
+    //     const no = noW.value; 
+    //     var backSpacer = parseFloat(no) / 5;
+    //     noW.value--;
+    //     document.getElementById("text-fill").value = document.getElementById("text-fill").value.slice(0, -1);
+    //     grandLevel.value = parseInt(backSpacer);
+    //     document.getElementById("form-check").value = document.getElementById("form-check").value.slice(0, -1);
+    // } else if( Size === 0){
+    //     // Size = 46;
+    //     // alert(Size);
+    //     noW.value = null;
+    // }
 };
 
 function space(){
     var noW = document.getElementById("noW");
-    var noOfWords = document.getElementById("text-fill");
+    var form = document.getElementById("form-fill"); // note // to get length value of the form fill
+    var typed = document.getElementById("text-fill");
+    var checked = document.getElementById("form-check"); // To check value display
+    var grandSelection = document.getElementById("grandSelect");
+    var grandLevel = document.getElementById("grandLevel");
+    var grandLevelOne = document.getElementById("grandLevelOne");
+    var grandLevelTwo = document.getElementById("grandLevelTwo");
+    var grandKeySpace = document.getElementById("grandKeySpace");
 
-    noOfWords.value += " ";
-    noW.value++;
+    const formVal = form.value; //parse form array as var
+        const formArray = Array.from(formVal); //Parse form inside an array
+        const typedVal = typed.value; //parse text(typed) array as var
+        var typedArray = Array.from(typedVal); //Parse text(typed) inside an array 
+        const typedEach = typedArray.at(-1); // get the last item(element)  
+        const lentCount = typedArray.length ; //to get the index of the typedArray
+        
+        var item = formArray[lentCount-1];
+        var second = typedArray[lentCount-1];
+
+
+        typed.value += " ";
+
+    if(second === item){
+        checked.value += " ";
+        checked.style.color = "green";
+        grandLevelOne.value++;
+    }else{
+        checked.value += "+";
+        checked.style.color = "red";
+        grandLevelTwo.value++;
+    }
+    // noW.value++;
+    
+    grandKeySpace.value++;
+    var grandKey = parseFloat(grandKeySpace.value);
+    var grandSel = parseFloat(grandSelection.value);
+
+    if(grandKey == grandSel){
+        document.getElementById("tickCheck").style.color = "green";
+        typed.value = null;
+        document.getElementById("grandKeySpace").value = 0;
+        return firstName();
+    }else{
+        document.getElementById("tickCheck").style.color = "red";
+    }
+
 }
 
 // Trying to add a letter recognition code 
@@ -624,22 +673,26 @@ function letter(evt){
 // controls the cap lock
 function cap(){
     var light = document.getElementById("light");
+    var lightMobile = document.getElementById("lightMobile");
     
     light.style.backgroundColor =  (light.style.backgroundColor == "chartreuse") ? "white" : "chartreuse";
+    lightMobile.style.backgroundColor =  (lightMobile.style.backgroundColor == "chartreuse") ? "white" : "chartreuse";
 };
 
 //Controls the shift buttton
 function shift(){
     var light = document.getElementById("Shift");
+    var ShiftLight = document.getElementById("ShiftMobile");
     
     light.style.backgroundColor =  (light.style.backgroundColor == "chartreuse") ? "white" : "chartreuse";
+    ShiftLight.style.backgroundColor =  (ShiftLight.style.backgroundColor == "chartreuse") ? "white" : "chartreuse";
 };
 
 // Controls the typing text syntax
 function nb(val){
     var light = document.getElementById("light");
     var lightTwo = document.getElementById("Shift");
-    var disp = document.getElementById("text-fill");
+    // var disp = document.getElementById("text-fill");
     // const key = val.code;
     // const keyBack = val.key;
     val = (val) ? val : Window.event;
@@ -651,23 +704,47 @@ function nb(val){
     var checked = document.getElementById("form-check"); // To check value display
     // let chart = typed.innerHTML.length;
     var noW = document.getElementById("noW");
+    var grandSelection = document.getElementById("grandSelect");
+    var grandLevel = document.getElementById("grandLevel");
+    var grandLevelOne = document.getElementById("grandLevelOne");
+    var grandLevelTwo = document.getElementById("grandLevelTwo");
+    var grandLevelThree = document.getElementById("grandLevelThree");
+    var grandKeySpace = document.getElementById("grandKeySpace");
+    var noWOne = document.getElementById("noW-one");
 
+    document.getElementById("instructionBoxOne").innerHTML = ".. now you can begin test. Press 'stop' to stop the test! Make sure to type correctly, to gain more points"
+    
     // test 3
     if((light.style.backgroundColor == "chartreuse") || (lightTwo.style.backgroundColor == "chartreuse")){
-        disp.value += val.toUpperCase();
+        typed.value += val.toUpperCase();
         light.style.backgroundColor == "chartreuse";
         lightTwo.style.backgroundColor = "white";
     }else{        
-        document.getElementById("text-fill").value += val;
+        typed.value += val;
     }
 
+    const no = noW.value;  //get the no of words
+
+    // const indexNo = no - 1;
+
+    // To count the number of words
+    var mod = parseFloat(no) % 5;
+    var backSpacer = parseFloat(no) / 5;
+    // if(mod == 0){
+    //     grandLevel.value++;
+    // } 
+    grandLevel.value = parseInt(backSpacer);
+
+    if(grandLevel.value ===  noWOne.value){   
+        return haltGame();
+    }
     // var word = document.getElementById("word");
 
-    if((( charCode >= 65 && charCode <= 90 ) || ( charCode >= 97 && charCode <= 122 )) || (chart === 44 )|| (charCode === 46) || (key === "Space")){    
+    // if((( charCode >= 65 && charCode <= 90 ) || ( charCode >= 97 && charCode <= 122 )) || (chart === 44 )|| (charCode === 46) || (key === "Space")){    
 
-        noW.value++; //Note
+        // noW.value++; //Note
         // TotalNoOfW.value = form.value.length;
-        const no = noW.value;  //get the no of words
+        // const no = noW.value;  //get the no of words
         const indexNo = no - 1;
         const formVal = form.value; //parse form array as var
         const formArray = Array.from(formVal); //Parse form inside an array
@@ -677,6 +754,8 @@ function nb(val){
         const lentCount = typedArray.length ; //to get the index of the typedArray
         
         // const typedEachh = typedVal.at(-1); // get the last item(element)
+        console.log(typed.value)
+        console.log(typedVal.value)
         var check = checked.value;
         // var checkEach = check.at(-1); //get the last item(on checking) 
 
@@ -687,12 +766,27 @@ function nb(val){
         if(second === item){
             checked.value += typedEach;
             checked.style.color = "green";
+            grandLevelOne.value++;
         }else{
-            checked.value += "_";
+            checked.value += "+";
             checked.style.color = "red";
+            grandLevelTwo.value++;
         }         
         
-    }
+        grandKeySpace.value++;
+        var grandKey = parseFloat(grandKeySpace.value);
+        var grandSel = parseFloat(grandSelection.value);
+
+        if(grandKey == grandSel){
+            document.getElementById("tickCheck").style.color = "green";
+            typed.value = null;
+            document.getElementById("grandKeySpace").value = 0;
+            return firstName();
+        }else{
+            document.getElementById("tickCheck").style.color = "red";
+        }
+        
+    // }
 
     
     // writeUp.style.color =  (light.style.backgroundColor == "green") ? "white" : "green";
@@ -759,6 +853,8 @@ function keyCl(evt){
     var noWOne = document.getElementById("noW-one");
 
     if((( charCode >= 65 && charCode <= 90 ) || ( charCode >= 97 && charCode <= 122 ) || ( charCode >= 48 && charCode <= 57 )) || (charCode === 44) || (charCode === 46)){    
+        document.getElementById("instructionBoxOne").innerHTML = ".. now you can begin test. Press 'stop' to stop the test! Make sure to type correctly, to gain more points"
+        
 
         noW.value++; //Note
         // TotalNoOfW.value = form.value.length;
@@ -774,7 +870,7 @@ function keyCl(evt){
         // } 
         grandLevel.value = parseInt(backSpacer);
 
-        if(grandLevel.value ==  noWOne.value){   
+        if(grandLevel.value ===  noWOne.value){   
             return haltGame();
         }
         // if(second === item){
@@ -838,21 +934,30 @@ function keyCl(evt){
     // If backspace is pressed, the number of words reduces
     //  Fix the backspace to no of words
     if(keyBack === "Backspace"){
-        const no = noW.value; 
-        var backSpacer = parseFloat(no) / 5;
-        noW.value--;
-        grandKeySpace.value--;  
-        grandLevel.value = parseInt(backSpacer);
-        document.getElementById("form-check").value = document.getElementById("form-check").value.slice(0, -1);
-        if(chart === 0){
-            noW.value = null;
-        }
+        // evt.preventDefault()
+        return
+        // const no = noW.value; 
+        // var backSpacer = parseFloat(no) / 5;
+        // noW.value--;
+        // grandKeySpace.value--;  
+        // grandLevel.value = parseInt(backSpacer);
+        // document.getElementById("form-check").value = document.getElementById("form-check").value.slice(0, -1);
+        // if(chart === 0){
+        //     noW.value = null;
+        // }
         // if(mod == 0){
         // } 
 
     }
+}
 
-
+function keyCle(evt){
+    const keyBack = evt.key;
+    if(keyBack === "Backspace"){
+        evt.preventDefault()
+        document.getElementById("instructionBoxOne").innerHTML = "Can not clear value";
+    
+    }
 }
 
 function haltGame(){
@@ -1043,7 +1148,7 @@ function  firstName(){
 //     var resultBoxOne = document.getElementById("resultBoxOne");
 //     var resultBoxTwo = document.getElementById("resultBoxTwo");
 
-//     document.getElementById("instructionBoxOne").innerHTML = " For test one: Your test has disabled. To enable test, please select from any of the levels below ie. Easy, Intermediate, Hard. Then ... ";
+//     document.getElementById("instructionBoxOne").innerHTML = " For test one: Your test is disabled. To enable test, please select from any of the levels below ie. Easy, Medium, Hard. Then ... ";
 //     controlOne.style.display = "flex";
 //     resultBoxOne.style.display = "block";
 //     controlTwo.style.display = "none";
@@ -1063,7 +1168,7 @@ function  firstName(){
 //     var resultBoxOne = document.getElementById("resultBoxOne");
 //     var resultBoxTwo = document.getElementById("resultBoxTwo");
 
-//     // document.getElementById("instructionBoxTwo").innerHTML = "For Test two. Your test has been disabled. To enable test, set your test value. First input a time duration (Mins & Secs)..";
+//     // document.getElementById("instructionBoxTwo").innerHTML = "For Test two. Your test is been disabled. To enable test, set your test value. First input a time duration (Mins & Secs)..";
 //     controlOne.style.display = "none"
 //     resultBoxOne.style.display = "none";
 //     controlTwo.style.display = "flex";

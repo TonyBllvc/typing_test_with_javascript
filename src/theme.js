@@ -1,10 +1,10 @@
 function mode() {
     const icon = document.getElementById("modeNo");
 
-    if(icon.value === '1'){
+    if (icon.value === '1') {
         dark();
         darkTwo();
-    }else if(icon.value === '2' ){
+    } else if (icon.value === '2') {
         light();
         lightTwo();
     }
@@ -101,6 +101,8 @@ function dark() {
     const instructionOne = document.getElementById("INSTRUCTIONONE");
     const instructionTwo = document.getElementById("INSTRUCTIONTWO");
     const instructionThree = document.getElementById("INSTRUCTIONTHREE");
+    const instructionFour = document.getElementById("INSTRUCTIONFOUR");
+    const instructionFive = document.getElementById("INSTRUCTIONFIVE");
     const easy = document.getElementById("easy");
     const medium = document.getElementById("medium");
     const hard = document.getElementById("hard");
@@ -118,6 +120,8 @@ function dark() {
     instructionOne.style.backgroundColor = 'darkslateblue';
     instructionTwo.style.backgroundColor = 'darkslateblue';
     instructionThree.style.backgroundColor = 'darkslateblue';
+    instructionFour.style.backgroundColor = 'darkslateblue';
+    instructionFive.style.backgroundColor = 'darkslateblue';
     easy.style.backgroundColor = 'cornflowerblue';
     medium.style.backgroundColor = 'cornflowerblue';
     hard.style.backgroundColor = 'cornflowerblue';
@@ -137,9 +141,19 @@ function darkTwo() {
     const bodyFive = document.getElementById("BODYFIVE");
     const bodySix = document.getElementById("BODYSIX");
     const bodySeven = document.getElementById("BODYSEVEN");
+    const boardOne = document.getElementById("boardOne");
+    const circleBG = document.getElementById("circleBG");
+    const boardTwo = document.getElementById("boardTwo");
+    const init = document.getElementById("init");
     const instructionOne = document.getElementById("INSTRUCTIONONE");
     const instructionTwo = document.getElementById("INSTRUCTIONTWO");
     const instructionThree = document.getElementById("INSTRUCTIONTHREE");
+    const resultBoxOne = document.getElementById("resultssBox");
+    // const resultBoxTwo = document.getElementById("resultBoxTwo");
+    const present = document.getElementById("present");
+    const presents = document.getElementById("presents");
+    const groundFlex = document.getElementsByClassName("groundFlex");
+    const groundFlexTwo = document.getElementsByClassName("groundFlex-box-two");
     const apply = document.getElementById("apply");
     const start = document.getElementById("start");
     const stop = document.getElementById("stopping");
@@ -155,12 +169,21 @@ function darkTwo() {
     // title.style.backgroundColor = 'darkslateblue';
     bodyThree.style.backgroundColor = 'slategray';
     bodyFour.style.backgroundColor = 'slategray';
-    bodyFive.style.backgroundColor = '#cac1c1';
+    // bodyFive.style.backgroundColor = 'slategray';
     bodySix.style.backgroundColor = 'slategray';
-    bodySeven.style.backgroundColor = '#cac1c1';
+    // bodySeven.style.backgroundColor = '#cac1c1';
+    boardOne.style.backgroundColor = 'slategray';
+    circleBG.style.backgroundColor = 'slategray';
+    boardTwo.style.backgroundColor = 'slategray';
     // instructionOne.style.backgroundColor = 'darkslateblue';
     // instructionTwo.style.backgroundColor = 'darkslateblue';
     // instructionThree.style.backgroundColor = 'darkslateblue';
+    present.style.backgroundColor = 'darkslateblue';
+    presents.style.backgroundColor = 'darkslateblue';
+    groundFlex.style.backgroundColor = 'darkslateblue';
+    groundFlexTwo.style.backgroundColor = 'darkslateblue';
+    resultBoxOne.style.border = '5px solid darkslateblue';
+    // resultBoxTwo.style.border = '5px solid darkslateblue';
     apply.style.backgroundColor = 'cornflowerblue';
     start.style.backgroundColor = 'cornflowerblue';
     stop.style.backgroundColor = 'cornflowerblue';
@@ -168,3 +191,7 @@ function darkTwo() {
     two.style.backgroundColor = 'cornflowerblue';
     keyboard.style.backgroundColor = 'slategray'
 }
+
+// const boardOne = document.getElementById("board-one");
+// const circleBG = document.getElementById("circleBG");
+// const boardTwo = document.getElementById("board-two");

@@ -514,11 +514,14 @@ hr{
   }
 
   .input-one-results{
-    width: 10%; 
-    text-align: center; 
+    width: 13%; 
+    /* display: flex;
+    justify-content: flex-start; */
+    /* text-align: center; */
+    text-align: start; 
     border: none; 
     color: darkcyan; 
-    font-size: 30px; 
+    font-size: 23.5px; 
     background-color: transparent;
   }
   .groundFlex-2{
@@ -534,8 +537,8 @@ hr{
 
   }
   .input-one-result{
-    width: 10%;  
-    text-align: center; 
+    width: 14%;  
+    text-align: start; 
     border: none; 
     color:green; 
     font-size: 30px; 

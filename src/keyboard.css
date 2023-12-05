@@ -39,7 +39,7 @@
 
 .contain{
     background-color: azure;
-    color: ;
+    /* color: ; */
     padding: 5px;
     /* border-radius: 0 0 25px 25px; */
     /* grid-template-columns: repeat(16, 50px);
@@ -280,7 +280,7 @@
 
 
 .Shift {
-    font-size: ;
+    /* font-size: ; */
     background-color: white;
     color: darkslategrey;
     padding: 1px 5.8px 1px 5.8px;
@@ -553,7 +553,7 @@
     }
 
     .design-small{
-        height:;
+        /* height:; */
         background-color: white;
         width: 70%;
         padding: 12px;
@@ -671,7 +671,7 @@
 
 
 .Shift {
-    font-size: ;
+    /* font-size: ; */
     background-color: white;
     color: darkslategrey;
     padding: 1px 5.8px 1px 5.8px;
@@ -743,7 +743,7 @@
         display: none;
     }
     .design-small{
-        height:;
+        /* height:; */
         background-color: white;
         width: 70%;
         padding: 5px;
@@ -754,7 +754,7 @@
     }
     .contain-small{
         background-color: azure;
-        color: ;
+        /* color: ; */
         padding: 2px;
         border-radius: 0 0 2rem 2rem;
         /* grid-template-columns: repeat(16, 50px);
@@ -885,7 +885,7 @@
 
 
 .Shift {
-    font-size: ;
+    /* font-size: ; */
     background-color: white;
     color: darkslategrey;
     padding: 1px 5.8px 1px 5.8px;
@@ -957,7 +957,7 @@
         display: none;
     }
     .design-small{
-        height:;
+        /* height:; */
         background-color: white;
         width: 70%;
         padding: 5px;
@@ -968,7 +968,7 @@
     }
     .contain-small{
         background-color: azure;
-        color: ;
+        /* color: ; */
         padding: 2px;
         border-radius: 0 0 2rem 2rem;
         /* grid-template-columns: repeat(16, 50px);
@@ -1099,7 +1099,7 @@
 
 
 .Shift {
-    font-size: ;
+    /* font-size: ; */
     background-color: white;
     color: darkslategrey;
     padding: 1px 5.8px 1px 5.8px;

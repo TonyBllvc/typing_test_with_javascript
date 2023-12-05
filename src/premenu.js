@@ -104,7 +104,7 @@ function loadingSyncOne() {
     var resultBoxOne = document.getElementById("resultBoxOne");
     var resultBoxTwo = document.getElementById("resultBoxTwo");
 
-    document.getElementById("instructionBoxOne").innerHTML = " For test one: Your test has disabled. To enable test, please select from any of the levels below ie. Easy, Intermediate, Hard. Then ... ";
+    document.getElementById("instructionBoxOne").innerHTML = " For test one: Your test is disabled. To enable test, please select from any of the levels below ie. Easy, Medium, Hard. Then ... ";
     controlOne.style.display = "flex";
     resultBoxOne.style.display = "block";
     controlTwo.style.display = "none";
@@ -170,7 +170,7 @@ function Two() {
     start.style.border = "2.2px solid gray";
     stopping.style.color = "gray";
     stopping.style.border = "2.2px solid gray";
-    instructionTwo.innerHTML = "For Test two. Your test has been disabled. To enable test, set your test value. First input a time duration (Mins & Secs).. ";
+    instructionTwo.innerHTML = "For Test two. Your test is been disabled. To enable test, set your test value. First input a time duration (Mins & Secs).. ";
 
     // document.getElementById("word").disabled = true;
     document.getElementById("text").disabled = true;
@@ -191,7 +191,7 @@ function loadingSyncTwo() {
     var resultBoxOne = document.getElementById("resultBoxOne");
     var resultBoxTwo = document.getElementById("resultBoxTwo");
 
-    // document.getElementById("instructionBoxTwo").innerHTML = "For Test two. Your test has been disabled. To enable test, set your test value. First input a time duration (Mins & Secs)..";
+    // document.getElementById("instructionBoxTwo").innerHTML = "For Test two. Your test is been disabled. To enable test, set your test value. First input a time duration (Mins & Secs)..";
     controlOne.style.display = "none"
     resultBoxOne.style.display = "none";
     controlTwo.style.display = "flex";
