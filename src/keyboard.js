@@ -94,6 +94,7 @@ function spaceTwo(){
 function enterBtn(){
     var indicator = document.getElementById("indicator")
     var typed = document.getElementById("text"); //note
+
   if(indicator.value == 'T2'){
     typed.value = null;
     return secondName();
@@ -304,6 +305,7 @@ function testOne(val){
         typed.value += val;
     }
 
+    noW.value++; //Note
     const no = noW.value;  //get the no of words
 
     // const indexNo = no - 1;

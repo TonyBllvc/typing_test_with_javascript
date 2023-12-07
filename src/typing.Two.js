@@ -286,7 +286,7 @@ function cancelButtonTwo() {
     firstTest.style.color = " #24001b";
     firstTest.style.border = "2.2px solid #24001b";
     firstTest.disabled = false;
-    instructionTwo.innerHTML = "For Test two. Your test has been disabled. To enable test, set your test value. First input a time duration (Mins & Secs).. ";
+    instructionTwo.innerHTML = "For Test two. Your test has been disabled. To enable test, set your test value. First input a time duration (Mins).. ";
 
     // document.getElementById("word").disabled = true;
     document.getElementById("text").disabled = true;
@@ -475,7 +475,7 @@ function endStop() {
     stop.style.color = "gray";
 
     document.getElementById("text").disabled = true;
-    document.getElementById("instructionBoxTwo").innerHTML = "You ended the game. Press 'Reload' to refresh the game";
+    document.getElementById("instructionBoxTwo").innerHTML = "You ended the game. Press 'Reset' to refresh the game";
 
     // if(wordWrong.value > 0){
     //     var resultOne = wordError() / word;
@@ -821,7 +821,7 @@ function completeTest() {
     stop.style.color = "gray";
 
     document.getElementById("text").disabled = true;
-    document.getElementById("instructionBoxTwo").innerHTML = "You ended the game. Press 'Reload' to refresh the game";
+    document.getElementById("instructionBoxTwo").innerHTML = "You ended the game. Press 'Reset' to refresh the game";
 
     // return sumUpOne();
 

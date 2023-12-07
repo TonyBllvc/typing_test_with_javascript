@@ -502,7 +502,7 @@ function end() {
     document.getElementById("play").style.color = "white";
     document.getElementById("stop").style.color = "orangered";   
 
-    document.getElementById("instructionBoxOne").innerHTML = "You ended the test. Press 'Reload' to refresh test..";
+    document.getElementById("instructionBoxOne").innerHTML = "You ended the test. Press 'Reset' to refresh test..";
 
     
     
@@ -756,7 +756,7 @@ function haltGame(){
     wpm.placeholder = "number of words";
     wpm.style.border = "none";
     wpm.style.backgroundColor = "white";
-    text.value = "You ended the game. Press 'Reload' to refresh the game";
+    text.value = "You ended the game. Press 'Reset' to refresh the game";
     document.getElementById("text-fill").disabled = true;
     document.getElementById("medium").disabled = false;
     document.getElementById("easy").disabled = false;
@@ -788,7 +788,7 @@ function accuracy(){
     // // Sum of both points
     const sumPoints = pointOne + pointTwo;
     const totalDiff = sumPoints / 10;
-    const totalDiffer = totalDiff.toFixed(3);
+    var totalDiffer = totalDiff.toFixed(3);
     const accurate = totalDiffer * 100;
 
     Count.value = accurate.toFixed(1);
