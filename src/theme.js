@@ -22,6 +22,8 @@ function light() {
     const instructionOne = document.getElementById("INSTRUCTIONONE");
     const instructionTwo = document.getElementById("INSTRUCTIONTWO");
     const instructionThree = document.getElementById("INSTRUCTIONTHREE");
+    const instructionFour = document.getElementById("INSTRUCTIONFOUR");
+    const instructionFive = document.getElementById("INSTRUCTIONFIVE");
     const typeScreen = document.getElementById("text-fill");
     const easy = document.getElementById("easy");
     const medium = document.getElementById("medium");
@@ -40,6 +42,8 @@ function light() {
     instructionOne.style.backgroundColor = 'cadetblue'
     instructionTwo.style.backgroundColor = 'cadetblue';
     instructionThree.style.backgroundColor = 'cadetblue';
+    instructionFour.style.backgroundColor = 'cadetblue';
+    instructionFive.style.backgroundColor = 'cadetblue';
     easy.style.backgroundColor = 'lightblue';
     medium.style.backgroundColor = 'lightblue';
     hard.style.backgroundColor = 'lightblue';
@@ -62,6 +66,12 @@ function lightTwo() {
     const instructionOne = document.getElementById("INSTRUCTIONONE");
     const instructionTwo = document.getElementById("INSTRUCTIONTWO");
     const instructionThree = document.getElementById("INSTRUCTIONTHREE");
+    const present = document.getElementById("present");
+    const presents = document.getElementById("presents");
+    const boardOne = document.getElementById("boardOne");
+    const circleBG = document.getElementById("circleBG");
+    const boardTwo = document.getElementById("boardTwo");
+    const keyboard = document.getElementById("keyboard");
     const apply = document.getElementById("apply");
     const start = document.getElementById("start");
     const stop = document.getElementById("stopping");
@@ -79,6 +89,12 @@ function lightTwo() {
     bodyFive.style.backgroundColor = 'darkgray';
     bodySix.style.backgroundColor = 'silver';
     bodySeven.style.backgroundColor = 'darkgray';
+    present.style.backgroundColor = 'cadetblue';
+    presents.style.backgroundColor = 'cadetblue';
+    boardOne.style.backgroundColor = 'silver';
+    circleBG.style.backgroundColor = 'silver';
+    boardTwo.style.backgroundColor = 'silver'; 
+    keyboard.style.backgroundColor = 'silver';
     // instructionOne.style.backgroundColor = 'darkslateblue';
     // instructionTwo.style.backgroundColor = 'darkslateblue';
     // instructionThree.style.backgroundColor = 'darkslateblue';
@@ -108,6 +124,8 @@ function dark() {
     const hard = document.getElementById("hard");
     const one = document.getElementById("testOneC");
     const two = document.getElementById("testTwoC");
+    const firstTest = document.getElementById("firstTest");
+    const secondTest = document.getElementById("secondTest");
     const typeScreen = document.getElementById("text-fill");
 
     iconVal.value = 2;
@@ -116,7 +134,11 @@ function dark() {
     typeScreen.style.backgroundColor = 'darkcyan';
     title.style.backgroundColor = 'darkslateblue';
     bodyOne.style.backgroundColor = 'slategray';
-    bodyTwo.style.backgroundColor = 'slategray';
+    bodyTwo.style.backgroundColor = 'slategray'; 
+    firstTest.style.backgroundColor = 'cornflowerblue';
+    secondTest.style.backgroundColor = 'cornflowerblue';
+    // firstTest.style.border = '1px solid darkslateblue';
+    // secondTest.style.border = '1px solid darkslateblue';
     instructionOne.style.backgroundColor = 'darkslateblue';
     instructionTwo.style.backgroundColor = 'darkslateblue';
     instructionThree.style.backgroundColor = 'darkslateblue';
@@ -152,6 +174,7 @@ function darkTwo() {
     // const resultBoxTwo = document.getElementById("resultBoxTwo");
     const present = document.getElementById("present");
     const presents = document.getElementById("presents");
+    const keyboard = document.getElementById("keyboard");
     const groundFlex = document.getElementsByClassName("groundFlex");
     const groundFlexTwo = document.getElementsByClassName("groundFlex-box-two");
     const apply = document.getElementById("apply");
@@ -160,7 +183,6 @@ function darkTwo() {
     const one = document.getElementById("firstTest");
     const two = document.getElementById("secondTest");
     const typeScreen = document.getElementById("text");
-    const keyboard = document.getElementById('keyboard');
 
     iconVal.value = 2;
     // icon.style.backgroundColor = 'slategray';
@@ -169,12 +191,13 @@ function darkTwo() {
     // title.style.backgroundColor = 'darkslateblue';
     bodyThree.style.backgroundColor = 'slategray';
     bodyFour.style.backgroundColor = 'slategray';
-    // bodyFive.style.backgroundColor = 'slategray';
+    bodyFive.style.backgroundColor = 'slategray';
     bodySix.style.backgroundColor = 'slategray';
-    // bodySeven.style.backgroundColor = '#cac1c1';
+    bodySeven.style.backgroundColor = 'slategray';
     boardOne.style.backgroundColor = 'slategray';
     circleBG.style.backgroundColor = 'slategray';
     boardTwo.style.backgroundColor = 'slategray';
+    keyboard.style.backgroundColor = 'slategray';
     // instructionOne.style.backgroundColor = 'darkslateblue';
     // instructionTwo.style.backgroundColor = 'darkslateblue';
     // instructionThree.style.backgroundColor = 'darkslateblue';

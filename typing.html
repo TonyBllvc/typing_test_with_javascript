@@ -29,12 +29,13 @@
     <link rel="stylesheet" href="src/messagePopup.css">
 
     <!-- The keyboard functionalities -->
-    <script type="text/javascript" src="src/typing.js">
-
-
-    </script>
+    <script type="text/javascript" src="src/typing.js"></script>
     <script type="text/javascript" src="src/preloader.js"></script>
     <script type="text/javascript" src="src/typing.Two.js"></script>
+
+
+    <!-- The virtual keyboard functionalities -->
+    <script type="text/javascript" src="src/keyboard.js"> </script>
 
     <script type="text/javascript" src="src/premenu.js">
 
@@ -132,8 +133,8 @@
                         <input type="text" id="form-fill" name="form" placeholder="Input form to be typed" disabled>
                         <input type="text" id="form-check" name="form" placeholder="Display to check" disabled>
                         <input type="text" id="text-fill" name="text" onkeyup="keyCl(event)" onfocus="keyCl(event)"
-                            onchange="keyCl(event)" onclick="keyCl(event)" onkeydown="keyCle(event)" onkeyup="backspace(event)" required
-                            autocomplete="off" spellcheck="false">
+                            onchange="keyCl(event)" onclick="keyCl(event)" onkeydown="keyCle(event)"
+                            onkeyup="backspace(event)" required autocomplete="off" spellcheck="false">
                     </form>
                     <div class="testButtonTwo">
                         <div id="BODYONE" class="testButtonTwoBox">
@@ -219,8 +220,8 @@
                             <input type="text" name="loadText" id="loadTextValue" placeholder="Random words" disabled />
                             <input type="text" name="loadText" id="checkForm" placeholder="Word Checker" disabled />
                             <input class="secIntScreenContainer" name="textValue" id="text" onclick="typingOne(event)"
-                                onkeyup="typingOne(event)" autocomplete="off" autocapitalize="off" spellcheck="false"
-                                disabled />
+                                onkeyup="typingOne(event)" onkeydown="typingClear(event)" autocomplete="off"
+                                autocapitalize="off" spellcheck="false" disabled />
                             <!-- <input type="text" name="" id=""> -->
                             <!-- </div> -->
                         </form>
@@ -238,7 +239,7 @@
                     <div class="SecIntButtons">
                         <div id="BODYFOUR" class="SecIntBtnContainer">
                             <div id="init" class="center-flex speedDisplay-width">
-                                <div id="BODYFIVE"  class="inner-flex speedDispContainer" id="speedDisplay">
+                                <div id="BODYFIVE" class="inner-flex speedDispContainer" id="speedDisplay">
                                     <div type="button" class="instructBoxTwo">
                                         <p id="INSTRUCTIONFOUR" class="instructTitle"> InstructionS </p>
                                         <p id="instructionBoxTwo"> For Test two. Your test has been disabled. To enable
@@ -271,7 +272,7 @@
                                                 class="press-start">
                                         </span>
                                     </div>
-                                    <div  id="boardTwo" class="middle-inner-flex stopBtn">
+                                    <div id="boardTwo" class="middle-inner-flex stopBtn">
                                         <div class="btnContainer">
                                             <input type="button" id="stopping" class="press" onclick="endStop()"
                                                 value="Stop">
@@ -445,7 +446,7 @@
                             <button onclick="numb(';')" class="pad-3 bracket"> <sup> : </sup><sub> ; </sub> </button>
                             <button onclick="numb('')" class="pad-3 bracket"> <sup> " </sup><sub> ' </sub> </button>
                             <button onclick="numb('')" class="pad-3 bracket"> <sup> | </sup><sub> \ </sub> </button>
-                            <input onclick="nb()" type="button" value="ENTER" class="pad-3 enter">
+                            <input onclick="enterBtn()" type="button" value="ENTER" class="pad-3 enter">
                             <input onclick="nb()" type="button" value="pg dn" class="pad-3 down">
                         </div>
                         <div class="keys-5">

@@ -115,7 +115,6 @@ function loadingSyncOne() {
     document.getElementById("text-fill").value = null;
     document.getElementById("text-fill").disabled = true;
 
-
     return Two();
 
 }
@@ -190,7 +189,6 @@ function loadingSyncTwo() {
     var instructionTwo = document.getElementById("instructionBoxTwo");
     var resultBoxOne = document.getElementById("resultBoxOne");
     var resultBoxTwo = document.getElementById("resultBoxTwo");
-
     // document.getElementById("instructionBoxTwo").innerHTML = "For Test two. Your test is been disabled. To enable test, set your test value. First input a time duration (Mins & Secs)..";
     controlOne.style.display = "none"
     resultBoxOne.style.display = "none";
@@ -200,7 +198,6 @@ function loadingSyncTwo() {
     instructionOne.style.display = "none";
     instructionTwo.style.display = "flex";
 
-
     document.getElementById("text-fill").value = null;
     document.getElementById("text-fill").disabled = true;
     document.getElementById("apply").disabled = true;
@@ -208,7 +205,6 @@ function loadingSyncTwo() {
     document.getElementById("stop").disabled = true;
 
     return One();
-
 }
 
 

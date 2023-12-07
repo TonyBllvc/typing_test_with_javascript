@@ -502,7 +502,7 @@ function typingOne(event) {
     event = (event) ? event : Window.event;
     var charCode = (event.which) ? event.which : event.keyCode;
     // var present = document.getElementById("present");
-    var num = document.getElementById("wordOne");
+    // var num = document.getElementById("wordOne");
     var speed = document.getElementById("reader");
     var form = document.getElementById("loadTextValue"); // note
     var typed = document.getElementById("text"); //note
@@ -517,7 +517,10 @@ function typingOne(event) {
     var wordsAmount = document.getElementById("wordAmount");
 
     if (((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) || (charCode === 46)) {
-        num.value++;
+       
+        document.getElementById("instructionBoxTwo").innerHTML = "Press 'Enter' or 'Space' on your keyboard to change set of words. Press 'Stop' to end Test Two!";
+
+        wordsTyped.value++;
         const formVal = form.value; //parse form array as var
         const formArray = Array.from(formVal); //Parse form inside an array
         const typedVal = typed.value; //parse text(typed) array as var
@@ -578,9 +581,11 @@ function typingOne(event) {
         // }
 
 
-        if (words.value == wordsAmount.value) {
+        if (words.value === wordsAmount.value) {
             return completeTest();
         }
+        console.log(words.value)
+        console.log(wordsAmount.value)
         // if(speed.value <= 0){
         //     document.getElementById("text").disabled = true;
         //     return stop();
@@ -607,8 +612,9 @@ function typingOne(event) {
     //  Fix the backspace to no of words
     if (keyBack === "Backspace") {
         // alert(Working);
-        testing.value++;
+        // testing.value++;
     };
+
 
     // var passedSpeeds = parseFloat(speed.value);
     // var lastSpeed = passedSpeeds.toFixed(2);
@@ -616,6 +622,14 @@ function typingOne(event) {
     // To parsee
 }
 
+function typingClear(event){
+    const keyBack = event.key;
+    if(keyBack === "Backspace"){
+        event.preventDefault()
+        document.getElementById("instructionBoxTwo").innerHTML = "Can not clear value";
+    
+    }
+}
 // A random function to be called by other functions
 function secondName() {
     var Mins = document.getElementById("min");
