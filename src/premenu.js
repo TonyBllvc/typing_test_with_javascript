@@ -177,7 +177,7 @@ function Two() {
     document.getElementById("wordAmount").value = null;
     document.getElementById("apply").disabled = true;
     document.getElementById("start").disabled = true;
-    document.getElementById("stop").disabled = true;
+    // document.getElementById("stop").disabled = true;
 
 }
 

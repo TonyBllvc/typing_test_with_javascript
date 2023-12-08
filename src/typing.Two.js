@@ -319,6 +319,7 @@ function start() {
     var Min = document.getElementById("min");
     var Sec = document.getElementById("sec");
     var firstTest = document.getElementById("firstTest");
+    var result = document.getElementById("resultTwo");
     var apply = document.getElementById("apply");
     var start = document.getElementById("start");
     var stop = document.getElementById("stopping");
@@ -335,6 +336,7 @@ function start() {
     stop.style.backgroundColor = "#fc0000";
     stop.style.color = "#ffffff";
     stop.style.border = "2.2px solid white";
+    result.value = "0";
 
     // Stops the program after countdown
     if ((mins.value == 0 && secs.value == 0) || secs.value > 0) {
@@ -560,6 +562,7 @@ function typingOne(event) {
 
         // var passedSpeed = parseFloat(speed.value);
 
+        // to calculate points
         if (wordWrong.value > 0) {
             speed.value = wordError();
         } else if (wordWrong.value == 0 && wordCorrect.value > 0) {

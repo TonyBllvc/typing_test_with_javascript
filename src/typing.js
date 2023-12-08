@@ -297,6 +297,7 @@ function hardForm(){
     return name[int];
 }
 
+var setTheTime;
 
 function cancelButtonOne(){
     var mins = document.getElementById("minute");
@@ -331,7 +332,8 @@ function cancelButtonOne(){
     document.getElementById("hard").disabled = false;
     
     document.getElementById("play").style.color = "white";
-    document.getElementById("stop").style.color = "white";
+    document.getElementById("play").style.backgroundColor = "green";
+    document.getElementById("stop").style.backgroundColor = "red";
     
     
     lightThree.style.color = "#5443de";
@@ -390,7 +392,6 @@ function cancelButtonOne(){
 
 }
 
-var setTheTime;
 
 // For countdown (write this down in your note)
 
@@ -420,7 +421,8 @@ function play(){
         grandSelect.value = chartForm;
     };
     if(mins.value > 0){ 
-        document.getElementById("play").style.color = "#5443de";
+        // document.getElementById("play").style.color = "#5443de";
+        document.getElementById("play").style.backgroundColor = "#7cfc80";
         document.getElementById("stop").style.color = "white";
         document.getElementById("medium").disabled = true;
         document.getElementById("easy").disabled = true;
@@ -481,13 +483,14 @@ function countingOne(){
 // };
 
 
-function end() {
+function stopGame() {
+    // alert('I work')
     var mins = document.getElementById("minute");
     var secs = document.getElementById("second");
-    var timeDown = document.getElementById("timeCountdown");
-    var minSecHand = document.getElementById("timeDuration");
+    // var timeDown = document.getElementById("timeCountdown"); //*
+    // var minSecHand = document.getElementById("timeDuration"); //*
     var target = document.getElementById("target");
-    var noOfW = document.getElementById("wpm");
+    // var noOfW = document.getElementById("wpm"); //*
     var wpm = document.getElementById("noW");
     var form = document.getElementById("form-fill");
     var check = document.getElementById("form-check");
@@ -495,12 +498,19 @@ function end() {
     var lightThree = document.getElementById("easy");
     var lightTwo = document.getElementById("medium");    
     var light = document.getElementById("hard");
+    var grandSelection = document.getElementById("grandSelect");
+    var grandLevel = document.getElementById("grandLevel");
+    var grandLevelOne = document.getElementById("grandLevelOne");
+    var grandLevelTwo = document.getElementById("grandLevelTwo");
+    var grandLevelThree = document.getElementById("grandLevelThree");
+    var grandKeySpace = document.getElementById("grandKeySpace");
+    var noWOne = document.getElementById("noW-one");
     // var text = document.getElementById("text");
 
     clearInterval(setTheTime); 
     
-    document.getElementById("play").style.color = "white";
-    document.getElementById("stop").style.color = "orangered";   
+    document.getElementById("play").style.backgroundColor = "green";
+    document.getElementById("stop").style.backgroundColor = "orangered";   
 
     document.getElementById("instructionBoxOne").innerHTML = "You ended the test. Press 'Reset' to refresh test..";
 
@@ -518,33 +528,33 @@ function end() {
     secs.placeholder = "00";
     mins.style.border = "2px solid dimgray";
     secs.style.border = "2px solid dimgray";
-    timeDown.value = "00";
-    minSecHand.innerHTML = "min";
-    timeDown.style.border = "1.2px solid gray";
-    minSecHand.style.border = "2px solid black";
-    timeDown.style.color = "gray";
-    minSecHand.style.color = "gray";
-    timeDown.style.padding = "5.1px";
-    minSecHand.style.padding = "5.1px ";
-    timeDown.style.fontSize = "30px";
-    minSecHand.style.fontSize = "20px";
-    noOfW.value = null;
+    // timeDown.value = "00";
+    // minSecHand.innerHTML = "min";
+    // timeDown.style.border = "1.2px solid gray";
+    // minSecHand.style.border = "2px solid black";
+    // timeDown.style.color = "gray";
+    // minSecHand.style.color = "gray";
+    // timeDown.style.padding = "5.1px";
+    // minSecHand.style.padding = "5.1px ";
+    // timeDown.style.fontSize = "30px";
+    // minSecHand.style.fontSize = "20px";
+    // noOfW.value = null;
     target.value = null
-    noOfW.placeholder = "Word per min";
+    // noOfW.placeholder = "Word per min";
     target.placeholder = "Word Target";
     target.style.border = "1.6px solid gray";
-    noOfW.style.border = "1.6px solid gray";
+    // noOfW.style.border = "1.6px solid gray";
     target.style.color = "gray";
-    noOfW.style.color = "gray";
-    wpm.value = null;
-    wpm.placeholder = "number of words";
-    wpm.style.border = "none";
-    wpm.style.backgroundColor = "white";
+    // noOfW.style.color = "gray";
+    wpm.value = 0;
+    // wpm.placeholder = "number of words";
+    // wpm.style.border = "none";
+    // wpm.style.backgroundColor = "white";
     // circle.style.border = "2.4px solid dimgray";
     document.getElementById("medium").disabled = false;
     document.getElementById("easy").disabled = false;
     document.getElementById("hard").disabled = false;
-    
+    return accuracy()
 }
 
 
@@ -609,7 +619,7 @@ function keyCl(evt){
         grandLevel.value = parseInt(backSpacer);
 
         if(grandLevel.value ===  noWOne.value){   
-            return haltGame();
+            return stopGame();
         }
         // if(second === item){
         //     checked.value = typedVal;
@@ -699,72 +709,72 @@ function keyCle(evt){
     }
 }
 
-function haltGame(){
-    var mins = document.getElementById("minute");
-    var secs = document.getElementById("second");
-    var timeDown = document.getElementById("timeCountdown");
-    var minSecHand = document.getElementById("timeDuration");
-    var target = document.getElementById("target");
-    var noOfW = document.getElementById("wpm");
-    var wpm = document.getElementById("noW");
-    var form = document.getElementById("form-fill");
-    var check = document.getElementById("form-check");
-    var typed = document.getElementById("text-fill");    
-    var lightThree = document.getElementById("easy");
-    var lightTwo = document.getElementById("medium");    
-    var light = document.getElementById("hard");
-    var text = document.getElementById("text-fill");
+// function stopGame(){
+//     var mins = document.getElementById("minute");
+//     var secs = document.getElementById("second");
+//     var timeDown = document.getElementById("timeCountdown");
+//     var minSecHand = document.getElementById("timeDuration");
+//     var target = document.getElementById("target");
+//     var noOfW = document.getElementById("wpm");
+//     var wpm = document.getElementById("noW");
+//     var form = document.getElementById("form-fill");
+//     var check = document.getElementById("form-check");
+//     var typed = document.getElementById("text-fill");    
+//     var lightThree = document.getElementById("easy");
+//     var lightTwo = document.getElementById("medium");    
+//     var light = document.getElementById("hard");
+//     // var text = document.getElementById("text-fill");
 
-    clearInterval(setTheTime); 
+//     clearInterval(setTheTime); 
     
-    document.getElementById("play").style.color = "white";
-    document.getElementById("stop").style.color = "orangered";
+//     document.getElementById("play").style.color = "white";
+//     document.getElementById("stop").style.color = "orangered";
 
-    document.getElementById("instructionBoxOne").innerHTML = "You have just ended the game. Now, press reload to refresh the board!";
+//     document.getElementById("instructionBoxOne").innerHTML = "You have just ended the game. Now, press reload to refresh the board!";
     
-    lightThree.style.color = "#5443de";
-    lightTwo.style.color = "#5443de";
-    light.style.color = "#5443de";
-    form.value = null;
-    typed.value = null;
-    check.value = null;
-    mins.value = null;
-    secs.value = null;
-    mins.placeholder = "00";
-    secs.placeholder = "00";
-    mins.style.border = "2px solid dimgray";
-    secs.style.border = "2px solid dimgray";
-    timeDown.value = "00";
-    minSecHand.innerHTML = "min";
-    timeDown.style.border = "1.2px solid gray";
-    minSecHand.style.border = "2px solid black";
-    timeDown.style.color = "gray";
-    minSecHand.style.color = "gray";
-    timeDown.style.padding = "5.1px";
-    minSecHand.style.padding = "5.1px ";
-    timeDown.style.fontSize = "30px";
-    minSecHand.style.fontSize = "20px";
-    noOfW.value = null;
-    target.value = null
-    noOfW.placeholder = "Word per min";
-    target.placeholder = "Word Target";
-    target.style.border = "1.6px solid gray";
-    noOfW.style.border = "1.6px solid gray";
-    target.style.color = "gray";
-    noOfW.style.color = "gray";
-    wpm.value = null;
-    wpm.placeholder = "number of words";
-    wpm.style.border = "none";
-    wpm.style.backgroundColor = "white";
-    text.value = "You ended the game. Press 'Reset' to refresh the game";
-    document.getElementById("text-fill").disabled = true;
-    document.getElementById("medium").disabled = false;
-    document.getElementById("easy").disabled = false;
-    document.getElementById("hard").disabled = false;
-    return accuracy();
+//     lightThree.style.color = "#5443de";
+//     lightTwo.style.color = "#5443de";
+//     light.style.color = "#5443de";
+//     form.value = null;
+//     typed.value = null;
+//     check.value = null;
+//     mins.value = null;
+//     secs.value = null;
+//     mins.placeholder = "00";
+//     secs.placeholder = "00";
+//     mins.style.border = "2px solid dimgray";
+//     secs.style.border = "2px solid dimgray";
+//     timeDown.value = "00";
+//     minSecHand.innerHTML = "min";
+//     timeDown.style.border = "1.2px solid gray";
+//     minSecHand.style.border = "2px solid black";
+//     timeDown.style.color = "gray";
+//     minSecHand.style.color = "gray";
+//     timeDown.style.padding = "5.1px";
+//     minSecHand.style.padding = "5.1px ";
+//     timeDown.style.fontSize = "30px";
+//     minSecHand.style.fontSize = "20px";
+//     noOfW.value = null;
+//     target.value = null
+//     noOfW.placeholder = "Word per min";
+//     target.placeholder = "Word Target";
+//     target.style.border = "1.6px solid gray";
+//     noOfW.style.border = "1.6px solid gray";
+//     target.style.color = "gray";
+//     noOfW.style.color = "gray";
+//     wpm.value = null;
+//     wpm.placeholder = "number of words";
+//     wpm.style.border = "none";
+//     wpm.style.backgroundColor = "white";
+//     typed.value = "You ended the game. Press 'Reset' to refresh the game";
+//     document.getElementById("text-fill").disabled = true;
+//     document.getElementById("medium").disabled = false;
+//     document.getElementById("easy").disabled = false;
+//     document.getElementById("hard").disabled = false;
+//     return accuracy();
     
 
-}
+// }
 
 function accuracy(){
     var wc = document.getElementById("grandLevelOne");

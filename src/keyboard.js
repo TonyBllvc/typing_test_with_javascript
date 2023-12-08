@@ -62,7 +62,7 @@ function spaceOne(){
         checked.style.color = "green";
         grandLevelOne.value++;
     }else{
-        checked.value += "+";
+        checked.value += " ";
         checked.style.color = "red";
         grandLevelTwo.value++;
     }
