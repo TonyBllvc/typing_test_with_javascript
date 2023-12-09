@@ -298,7 +298,7 @@ function hardForm(){
 }
 
 var setTheTime;
-
+// console.log("301: " + setTheTime)
 function cancelButtonOne(){
     var mins = document.getElementById("minute");
     var secs = document.getElementById("second");
@@ -482,6 +482,7 @@ function countingOne(){
 //     clearInterval(setTheTime);
 // };
 
+let timeStamp
 
 function stopGame() {
     // alert('I work')
@@ -514,8 +515,7 @@ function stopGame() {
 
     document.getElementById("instructionBoxOne").innerHTML = "You ended the test. Press 'Reset' to refresh test..";
 
-    
-    
+    timeStamp = mins.value;
     lightThree.style.color = "#5443de";
     lightTwo.style.color = "#5443de";
     light.style.color = "#5443de";
@@ -539,6 +539,7 @@ function stopGame() {
     // timeDown.style.fontSize = "30px";
     // minSecHand.style.fontSize = "20px";
     // noOfW.value = null;
+    console.log("542: " + timeStamp)
     target.value = null
     // noOfW.placeholder = "Word per min";
     target.placeholder = "Word Target";
@@ -551,9 +552,9 @@ function stopGame() {
     // wpm.style.border = "none";
     // wpm.style.backgroundColor = "white";
     // circle.style.border = "2.4px solid dimgray";
-    document.getElementById("medium").disabled = false;
-    document.getElementById("easy").disabled = false;
-    document.getElementById("hard").disabled = false;
+    document.getElementById("medium").disabled = true;
+    document.getElementById("easy").disabled = true;
+    document.getElementById("hard").disabled = true;
     return accuracy()
 }
 
@@ -777,27 +778,35 @@ function keyCle(evt){
 // }
 
 function accuracy(){
-    var wc = document.getElementById("grandLevelOne");
-    var wl = document.getElementById("grandLevelTwo");
-    var Count = document.getElementById("grandLevelThree");
-    var wordTarget = document.getElementById("noW-one");
-    var wordCount = document.getElementById("grandLevel");
+    var wc = document.getElementById("grandLevelOne"); // correctly typed
+    var wl = document.getElementById("grandLevelTwo"); // wrongly typed
+    var Count = document.getElementById("grandLevelThree"); // results
+    var wordTarget = document.getElementById("noW-one"); // target words 
+    var wordCount = document.getElementById("grandLevel"); // typed words
+    var noWTwo = document.getElementById("noW-two");  // Target time
+    // timeStamp // time taken
     // var points = 5;
-
+    if(!wordCount.value){
+        alert("Please ensure you typed something")
+        return
+    }
     // // To calculate the points for typing (with errors)
-    var sumOne = parseFloat(wc.value) + parseFloat(wl.value);
+    var sumOne = parseFloat(wc.value) + parseFloat(wl.value); // sum of characters typed
     const firstPoints = parseFloat(wc.value) / sumOne;
-    const pointOne = firstPoints * 5;
+    const pointOne = firstPoints * 2;
     // const firstPoint = pointOne.toFixed(2);
 
     // // To calculate the points for words 
     var sumTwo = parseFloat(wordCount.value) / parseFloat(wordTarget.value);
-    const pointTwo = sumTwo * 5;
+    const pointTwo = sumTwo * 2;
     // const secondPoint = pointTwo.toFixed(2);
-
+    var sum = parseFloat(noWTwo.value) - parseInt(timeStamp); //  time taken(minutes)
+    const secondPoints = sum / parseFloat(noWTwo.value) 
+    const pointThree = secondPoints * 2
+   // (Time given - time taken) 
     // // Sum of both points
-    const sumPoints = pointOne + pointTwo;
-    const totalDiff = sumPoints / 10;
+    const sumPoints = pointOne + pointTwo + pointThree;
+    const totalDiff = sumPoints / 6;
     var totalDiffer = totalDiff.toFixed(3);
     const accurate = totalDiffer * 100;
 

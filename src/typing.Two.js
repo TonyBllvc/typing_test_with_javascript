@@ -465,7 +465,7 @@ function endStop() {
     var resultOne = reader.value / word;
     var finalResultOne = resultOne * 100; // calculate the percentage result
 
-    result.value = finalResultOne.toFixed(1);
+    result.value = finalResultOne.toFixed(0);
 
     mins.value = null;
     secs.value = null;
@@ -558,6 +558,11 @@ function typingOne(event) {
             // noW.value -= 1;
         }
 
+        // to limit the number of typed in words
+        if(typedArray.length === formArray.length){
+            typed.value = null
+            return secondName();
+        }
         // speed.value = wordError();
 
         // var passedSpeed = parseFloat(speed.value);
@@ -625,6 +630,7 @@ function typingOne(event) {
     // To parsee
 }
 
+// to prevent backspace from working
 function typingClear(event){
     const keyBack = event.key;
     if(keyBack === "Backspace"){
@@ -748,32 +754,32 @@ function calculate() {
 // Another end program button
 // Active when there is an error
 // Number of letters typed should not be equal to letters wrong
-function endGame() {
-    clearInterval(setTheTime);
-    var mins = document.getElementById("mins");
-    var secs = document.getElementById("secs");
-    var Min = document.getElementById("min");
-    var Sec = document.getElementById("sec");
-    var circle = document.getElementById("circleBG");
-    var stop = document.getElementById("stopping");
+// function endGame() {
+//     clearInterval(setTheTime);
+//     var mins = document.getElementById("mins");
+//     var secs = document.getElementById("secs");
+//     var Min = document.getElementById("min");
+//     var Sec = document.getElementById("sec");
+//     var circle = document.getElementById("circleBG");
+//     var stop = document.getElementById("stopping");
 
-    mins.value = null;
-    secs.value = null;
-    mins.style.border = "none";
-    secs.style.border = "none";
-    Min.value = null;
-    Sec.value = null;
-    circle.style.border = "2px solid red";
-    stop.style.color = "gray";
+//     mins.value = null;
+//     secs.value = null;
+//     mins.style.border = "none";
+//     secs.style.border = "none";
+//     Min.value = null;
+//     Sec.value = null;
+//     circle.style.border = "2px solid red";
+//     stop.style.color = "gray";
 
-    document.getElementById("text").disabled = true;
-    document.getElementById("stopping").disabled = true;
-    document.getElementById("instructionBoxTwo").innerHTML = "Press 'Reload to restart game";
-    document.getElementById("text").value = "Test error!! Please reload";
-    document.getElementById("checkForm").value = "Wrong letters cannot be equal to Right letters";
-    // return sumUpOne();
+//     document.getElementById("text").disabled = true;
+//     document.getElementById("stopping").disabled = true;
+//     document.getElementById("instructionBoxTwo").innerHTML = "Press 'Reload to restart game";
+//     document.getElementById("text").value = "Test error!! Please reload";
+//     document.getElementById("checkForm").value = "Wrong letters cannot be equal to Right letters";
+//     // return sumUpOne();
 
-};
+// };
 
 
 

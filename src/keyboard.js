@@ -162,7 +162,6 @@ function testTwo(val){
 
     document.getElementById("instructionBoxTwo").innerHTML = "Press 'Enter' or 'Space' on your keyboard to change set of words. Press 'Stop' to end Test Two!";
 
-    wordsTyped.value++;
     // test 3
     if((light.style.backgroundColor == "chartreuse") || (lightTwo.style.backgroundColor == "chartreuse")){
         typed.value += val.toUpperCase();
@@ -177,13 +176,17 @@ function testTwo(val){
 
     // const indexNo = no - 1;
 
-    const formVal = form.value; //parse form array as var
-    const formArray = Array.from(formVal); //Parse form inside an array
-    const typedVal = typed.value; //parse text(typed) array as var
-    var typedArray = Array.from(typedVal); //Parse text(typed) inside an array 
-    const typedEach = typedArray.at(-1); // get the last item(element)
-    const lentCount = typedArray.length; //to get the index of the typedArray
+        wordsTyped.value++;
+        
+        const formVal = form.value; //parse form array as var
+        const formArray = Array.from(formVal); //Parse form inside an array
+        const typedVal = typed.value; //parse text(typed) array as var
+        var typedArray = Array.from(typedVal); //Parse text(typed) inside an array 
+        const typedEach = typedArray.at(-1); // get the last item(element)
+        const lentCount = typedArray.length; //to get the index of the typedArray
 
+            // console.log("check 187: " + formArray.length)
+            // console.log("typed 188: " + typedArray.length)
     // // To count the number of words
     // var mod = parseFloat(no) % 5;
     // var backSpacer = parseFloat(no) / 5;
@@ -264,6 +267,21 @@ function testTwo(val){
     //     }
     // }
 
+            // to limit the number of typed in words
+            if(typedArray.length > formArray.length){
+                typed.value = null
+                return secondName();
+            }
+
+            if(typedArray.length === formArray.length){
+                // typed.value = null
+                setTimeout(() => {
+                    secondName()
+                    typed.value = null
+                }, 200)
+                 return
+            }
+        
 
 };
 
