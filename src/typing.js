@@ -499,15 +499,13 @@ function stopGame() {
     var lightThree = document.getElementById("easy");
     var lightTwo = document.getElementById("medium");    
     var light = document.getElementById("hard");
-    var grandSelection = document.getElementById("grandSelect");
-    var grandLevel = document.getElementById("grandLevel");
-    var grandLevelOne = document.getElementById("grandLevelOne");
-    var grandLevelTwo = document.getElementById("grandLevelTwo");
-    var grandLevelThree = document.getElementById("grandLevelThree");
-    var grandKeySpace = document.getElementById("grandKeySpace");
-    var noWOne = document.getElementById("noW-one");
+    var wordCount = document.getElementById("grandLevel"); // typed words
     // var text = document.getElementById("text");
 
+    if(!wordCount.value){
+        alert("Please ensure you typed something")
+        return
+    }
     clearInterval(setTheTime); 
     
     document.getElementById("play").style.backgroundColor = "green";
@@ -539,7 +537,6 @@ function stopGame() {
     // timeDown.style.fontSize = "30px";
     // minSecHand.style.fontSize = "20px";
     // noOfW.value = null;
-    console.log("542: " + timeStamp)
     target.value = null
     // noOfW.placeholder = "Word per min";
     target.placeholder = "Word Target";

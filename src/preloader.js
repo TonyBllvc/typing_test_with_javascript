@@ -6,9 +6,9 @@ function system() {
 }
 
 function myShow() {
-    // document.getElementById("loadSync").style.display = "none";
-    // document.getElementById("instructMe").style.display = "flex";
-    document.getElementById("indicator").value = "T2";
+    document.getElementById("loadSync").style.display = "none";
+    document.getElementById("instructMe").style.display = "flex";
+    document.getElementById("indicator").value = "T1";
 
     // to stop the preload..
     // You stop the window from reloading

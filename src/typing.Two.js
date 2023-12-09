@@ -592,6 +592,7 @@ function typingOne(event) {
         if (words.value === wordsAmount.value) {
             return completeTest();
         }
+        
         console.log(words.value)
         console.log(wordsAmount.value)
         // if(speed.value <= 0){

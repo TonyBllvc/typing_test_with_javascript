@@ -9,7 +9,7 @@
   background-color: blue;
   height: 40%;
   overflow: hidden;
-  /* display: none; */
+  display: none;
   /* display: flex; */
   position: relative;
   /* z-index: 4; */

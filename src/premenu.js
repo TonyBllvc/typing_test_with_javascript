@@ -53,8 +53,8 @@ function beginClick() {
     document.getElementById("instructMe").style.display = "none";
     document.getElementById("container").style.display = "flex";
 
-    caller = setTimeout(loadSession, 1000);
-    ender = setInterval(clear, 5500);
+    caller = setTimeout(loadSession, 500);
+    ender = setInterval(clear, 5000);
 }
 
 // function effect(){
